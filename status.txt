@@ -1,0 +1,3454 @@
+['adsf', 'bfad'] doing repairs. 
+
+09:05:45
+1 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:46
+2 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:46
+3 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:46
+4 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:46
+5 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:46
+6 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:47
+7 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:47
+8 to repair.
+0 phones awaiting calibration/testing.
+
+09:05:48
+8 to repair.
+-1 phones awaiting calibration/testing.
+
+09:05:48
+8 to repair.
+-2 phones awaiting calibration/testing.
+
+09:05:48
+8 to repair.
+-3 phones awaiting calibration/testing.
+
+09:05:49
+8 to repair.
+-4 phones awaiting calibration/testing.
+
+09:05:49
+7 to repair.
+-4 phones awaiting calibration/testing.
+
+09:05:49
+6 to repair.
+-4 phones awaiting calibration/testing.
+
+09:05:50
+5 to repair.
+-4 phones awaiting calibration/testing.
+
+09:05:50
+4 to repair.
+-4 phones awaiting calibration/testing.
+
+09:06:04
+5 to repair.
+-4 phones awaiting calibration/testing.
+
+10:01:25
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:27
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:30
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:31
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:31
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:31
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:01:32
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:02:24
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:02:31
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:02:34
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:02:35
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:03:45
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:03:46
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:03:47
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:03:49
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:39
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:42
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:43
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:44
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:45
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:46
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:46
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:04:47
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:05
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:06
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:06
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:06
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:07
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:07
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:07
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:07
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:08
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:08
+10 to repair.
+0 phones awaiting calibration/testing.
+
+10:05:08
+11 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:15
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:16
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:17
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:30
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:31
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:31
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:32
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:32
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:06:32
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:28
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:29
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:30
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:30
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:31
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:52
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:56
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:07:57
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:11
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:12
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:14
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:14
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:15
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:15
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:33
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:34
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:08:59
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:09:01
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:09:02
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:09:03
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:19
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:21
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:21
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:22
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:25
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:25
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:26
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:27
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:27
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:27
+10 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:31
+11 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:32
+12 to repair.
+0 phones awaiting calibration/testing.
+
+10:11:33
+13 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:19
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:24
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:24
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:25
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:28
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:29
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:30
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:41
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:42
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:43
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:44
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:46
+6 to repair.
+1 phones awaiting calibration/testing.
+
+10:15:46
+5 to repair.
+2 phones awaiting calibration/testing.
+
+10:15:47
+5 to repair.
+2 phones awaiting calibration/testing.
+
+10:15:49
+5 to repair.
+1 phones awaiting calibration/testing.
+
+10:15:51
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:52
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:53
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:53
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:15:53
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:18:37
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:18:40
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:18:41
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:18:44
+2 to repair.
+1 phones awaiting calibration/testing.
+
+10:18:44
+1 to repair.
+2 phones awaiting calibration/testing.
+
+10:18:45
+1 to repair.
+2 phones awaiting calibration/testing.
+
+10:18:47
+1 to repair.
+2 phones awaiting calibration/testing.
+
+10:19:02
+1 to repair.
+1 phones awaiting calibration/testing.
+
+10:19:14
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:19:16
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:19:17
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:19:18
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:19:18
+3 to repair.
+1 phones awaiting calibration/testing.
+
+10:19:19
+2 to repair.
+2 phones awaiting calibration/testing.
+
+10:19:21
+2 to repair.
+2 phones awaiting calibration/testing.
+
+10:19:22
+2 to repair.
+2 phones awaiting calibration/testing.
+
+10:20:08
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:08
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:08
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:09
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:09
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:09
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:20:10
+5 to repair.
+1 phones awaiting calibration/testing.
+
+10:20:10
+4 to repair.
+2 phones awaiting calibration/testing.
+
+10:20:11
+4 to repair.
+2 phones awaiting calibration/testing.
+
+10:20:11
+4 to repair.
+2 phones awaiting calibration/testing.
+
+10:20:12
+4 to repair.
+2 phones awaiting calibration/testing.
+
+10:20:13
+4 to repair.
+1 phones awaiting calibration/testing.
+
+10:20:15
+3 to repair.
+1 phones awaiting calibration/testing.
+
+10:20:15
+2 to repair.
+1 phones awaiting calibration/testing.
+
+10:20:15
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:55
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:56
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:57
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:57
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:58
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:58
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:58
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:59
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:23:59
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:24:00
+10 to repair.
+0 phones awaiting calibration/testing.
+
+10:24:01
+9 to repair.
+1 phones awaiting calibration/testing.
+
+10:24:02
+8 to repair.
+2 phones awaiting calibration/testing.
+
+10:24:03
+8 to repair.
+2 phones awaiting calibration/testing.
+
+10:28:26
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:26
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:27
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:27
+0 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:28
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:28
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:28
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:28
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:28:29
+3 to repair.
+1 phones awaiting calibration/testing.
+
+10:28:29
+2 to repair.
+2 phones awaiting calibration/testing.
+
+10:28:29
+1 to repair.
+3 phones awaiting calibration/testing.
+
+10:28:30
+1 to repair.
+2 phones awaiting calibration/testing.
+
+10:28:30
+1 to repair.
+1 phones awaiting calibration/testing.
+
+10:28:31
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:25
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:25
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:26
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:27
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:27
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:28
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:28
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:28
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:28
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:34:29
+5 to repair.
+-1 phones awaiting calibration/testing.
+
+10:34:29
+5 to repair.
+-2 phones awaiting calibration/testing.
+
+10:34:29
+5 to repair.
+-3 phones awaiting calibration/testing.
+
+10:34:30
+5 to repair.
+-3 phones awaiting calibration/testing.
+
+10:34:30
+5 to repair.
+-3 phones awaiting calibration/testing.
+
+10:37:12
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:13
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:13
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:14
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:15
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:16
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:17
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:17
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:17
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:18
+4 to repair.
+1 phones awaiting calibration/testing.
+
+10:37:19
+3 to repair.
+2 phones awaiting calibration/testing.
+
+10:37:19
+3 to repair.
+2 phones awaiting calibration/testing.
+
+10:37:20
+3 to repair.
+1 phones awaiting calibration/testing.
+
+10:37:20
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:25
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:26
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:26
+0 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:30
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:30
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:30
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:33
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:34
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:35
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:35
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:36
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:36
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:38
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:38
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:38
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:38
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:38
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:39
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:39
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:39
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:40
+0 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:40
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:41
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:46
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:46
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:46
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:47
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:47
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:47
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:47
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:48
+10 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:48
+11 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:48
+12 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:49
+13 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:49
+14 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:49
+15 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:49
+16 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:49
+17 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:50
+18 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:50
+19 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:50
+20 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:50
+21 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:51
+22 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:51
+23 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:51
+24 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:51
+25 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:52
+26 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:52
+27 to repair.
+0 phones awaiting calibration/testing.
+
+10:37:52
+28 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:21
+1 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:22
+2 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:23
+3 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:24
+4 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:24
+5 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:25
+6 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:25
+7 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:27
+8 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:27
+9 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:28
+10 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:29
+11 to repair.
+0 phones awaiting calibration/testing.
+
+10:41:31
+10 to repair.
+1 phones awaiting calibration/testing.
+
+10:41:32
+9 to repair.
+2 phones awaiting calibration/testing.
+
+10:41:32
+8 to repair.
+3 phones awaiting calibration/testing.
+
+10:41:32
+7 to repair.
+4 phones awaiting calibration/testing.
+
+10:41:33
+6 to repair.
+5 phones awaiting calibration/testing.
+
+10:41:33
+5 to repair.
+6 phones awaiting calibration/testing.
+
+10:41:33
+4 to repair.
+7 phones awaiting calibration/testing.
+
+10:41:35
+3 to repair.
+8 phones awaiting calibration/testing.
+
+10:41:35
+2 to repair.
+9 phones awaiting calibration/testing.
+
+10:41:37
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:39
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:40
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:41
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:42
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:42
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:42
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:43
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:43
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:43
+1 to repair.
+10 phones awaiting calibration/testing.
+
+10:41:45
+1 to repair.
+9 phones awaiting calibration/testing.
+
+10:41:47
+1 to repair.
+8 phones awaiting calibration/testing.
+
+10:41:47
+1 to repair.
+7 phones awaiting calibration/testing.
+
+10:41:47
+1 to repair.
+6 phones awaiting calibration/testing.
+
+10:41:47
+1 to repair.
+5 phones awaiting calibration/testing.
+
+10:41:47
+1 to repair.
+4 phones awaiting calibration/testing.
+
+10:41:48
+1 to repair.
+3 phones awaiting calibration/testing.
+
+10:41:48
+1 to repair.
+2 phones awaiting calibration/testing.
+
+10:41:48
+1 to repair.
+1 phones awaiting calibration/testing.
+
+10:41:49
+1 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:33
+1 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:36
+2 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:37
+3 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:38
+2 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:39
+3 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:40
+4 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:40
+5 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:41
+6 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:42
+5 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:42
+4 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:42
+3 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:42
+2 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:43
+3 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:44
+4 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:44
+5 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:45
+6 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:46
+6 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:48
+6 to repair.
+0 phones awaiting calibration/testing.
+
+19:22:50
+5 to repair.
+1 phones awaiting calibration/testing.
+
+19:22:50
+4 to repair.
+2 phones awaiting calibration/testing.
+
+19:22:53
+5 to repair.
+2 phones awaiting calibration/testing.
+
+19:22:58
+5 to repair.
+2 phones awaiting calibration/testing.
+
+19:22:58
+6 to repair.
+2 phones awaiting calibration/testing.
+
+19:23:00
+6 to repair.
+2 phones awaiting calibration/testing.
+
+19:23:00
+6 to repair.
+2 phones awaiting calibration/testing.
+
+19:23:00
+7 to repair.
+2 phones awaiting calibration/testing.
+
+19:23:01
+8 to repair.
+2 phones awaiting calibration/testing.
+
+19:23:02
+8 to repair.
+1 phones awaiting calibration/testing.
+
+19:23:02
+8 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:03
+8 to repair.
+-1 phones awaiting calibration/testing.
+
+19:23:03
+8 to repair.
+-2 phones awaiting calibration/testing.
+
+19:23:05
+7 to repair.
+-1 phones awaiting calibration/testing.
+
+19:23:05
+6 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:06
+5 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:07
+4 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:07
+3 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:07
+2 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:07
+1 to repair.
+0 phones awaiting calibration/testing.
+
+19:23:08
+0 to repair.
+0 phones awaiting calibration/testing.
+
+11:36:46
+-1 to repair.
+0 phones awaiting calibration/testing.
+
+11:36:51
+0 to repair.
+0 phones awaiting calibration/testing.
+
+11:36:51
+1 to repair.
+0 phones awaiting calibration/testing.
+
+11:36:56
+2 to repair.
+0 phones awaiting calibration/testing.
+
+11:36:57
+3 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:01
+4 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:01
+5 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:02
+6 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:02
+7 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:04
+8 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:05
+9 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:05
+10 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:14
+11 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:17
+12 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:17
+13 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:18
+14 to repair.
+0 phones awaiting calibration/testing.
+
+11:37:18
+15 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:08
+1 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:09
+2 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:09
+3 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:10
+4 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:11
+5 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:12
+4 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:13
+3 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:15
+4 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:15
+5 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:16
+6 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:17
+5 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:17
+4 to repair.
+2 phones awaiting calibration/testing.
+
+11:02:17
+4 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:18
+4 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:23
+3 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:23
+2 to repair.
+2 phones awaiting calibration/testing.
+
+11:02:24
+2 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:24
+2 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:25
+1 to repair.
+0 phones awaiting calibration/testing.
+
+11:02:29
+0 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:30
+0 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:30
+0 to repair.
+1 phones awaiting calibration/testing.
+
+11:02:32
+0 to repair.
+0 phones awaiting calibration/testing.
+
+13:34:51
+1 to repair.
+0 phones awaiting calibration/testing.
+
+13:34:52
+0 to repair.
+0 phones awaiting calibration/testing.
+
+13:34:52
+0 to repair.
+-1 phones awaiting calibration/testing.
+
+13:34:53
+0 to repair.
+-2 phones awaiting calibration/testing.
+
+13:34:53
+0 to repair.
+-3 phones awaiting calibration/testing.
+
+13:34:53
+0 to repair.
+-4 phones awaiting calibration/testing.
+
+13:34:53
+0 to repair.
+-5 phones awaiting calibration/testing.
+
+13:34:53
+0 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:54
+-1 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:54
+-2 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:54
+-3 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:54
+-4 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:54
+-5 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:56
+-5 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:57
+-5 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:57
+-5 to repair.
+-6 phones awaiting calibration/testing.
+
+13:34:57
+-5 to repair.
+-6 phones awaiting calibration/testing.
+
+14:43:48
+1 to repair.
+0 phones awaiting calibration/testing.
+
+14:49:54
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:49:55
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:02
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:02
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:02
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:02
+6 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:03
+5 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:03
+5 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:09
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:09
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:09
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:50:10
+3 to repair.
+-1 phones awaiting calibration/testing.['Jason', 'Gwartz'] 
+
+14:51:06
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:51:07
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:51:08
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:51:08
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:51:08
+0 to repair.
+-1 phones awaiting calibration/testing.[''] 
+
+14:51:08
+0 to repair.
+-2 phones awaiting calibration/testing.[''] 
+
+14:52:16
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:17
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:18
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:18
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:18
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:19
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:20
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:52:20
+5 to repair.
+-1 phones awaiting calibration/testing.[''] 
+
+14:52:21
+5 to repair.
+-2 phones awaiting calibration/testing.[''] 
+
+14:53:42
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:53:43
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:53:44
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:53:45
+2 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:53:45
+2 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:53:45
+2 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:53:46
+1 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:53:46
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:41
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:42
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:42
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:43
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:43
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:44
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:44
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:56:45
+4 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:56:45
+5 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:56:45
+6 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+14:58:32
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:58:45
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:58:47
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:58:47
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:58:50
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:58:50
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+14:59:38
+1 to repair.
+0 phones awaiting calibration/testing.['Jess', 'Jason'] 
+
+14:59:40
+2 to repair.
+0 phones awaiting calibration/testing.['Jess', 'Jason'] 
+
+15:00:11
+1 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gdsaf'] 
+
+15:00:14
+2 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gdsaf'] 
+
+15:00:15
+3 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gdsaf'] 
+
+15:00:32
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:33
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:34
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:34
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:50
+0 to repair.
+-1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:50
+0 to repair.
+-2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:00:52
+0 to repair.
+-3 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:02:13
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:02:14
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:03:05
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:03:07
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:03:21
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:27
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:29
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:29
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:30
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:30
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:31
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:32
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:33
+2 to repair.
+-1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:34
+2 to repair.
+-2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:04:34
+2 to repair.
+-3 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+15:12:06
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:25
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:25
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:26
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:26
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:26
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:27
+4 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+15:26:27
+3 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:26:28
+3 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:26:29
+3 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:26:30
+2 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:26:30
+2 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+15:26:30
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:26:31
+2 to repair.
+-1 phones awaiting calibration/testing.[''] 
+
+15:27:26
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:27:26
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:27:26
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:27:27
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:27:27
+3 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+15:27:27
+2 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:27:28
+2 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:27:28
+2 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:27:29
+1 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:27:29
+0 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+15:27:29
+0 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+15:27:29
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:37
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:38
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:39
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:39
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:40
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:40
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:40
+7 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:42
+8 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:42
+9 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:44
+10 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:44
+11 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:45
+12 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:47
+13 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:47
+14 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:48
+15 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:48
+16 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:48
+17 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:48
+18 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:49
+19 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:49
+20 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:50
+21 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:52
+22 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:52
+23 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:53
+24 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:28:53
+25 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:30:40
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:32:46
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:33:38
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:33:39
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:33:46
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:03
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:04
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:04
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:21
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:22
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:22
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:23
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:23
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:25
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:25
+7 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:26
+8 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:28
+9 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:29
+10 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:29
+11 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:29
+12 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:45
+13 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:45
+14 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:46
+15 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:35:51
+16 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:52
+17 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:52
+18 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:52
+19 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:54
+20 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:54
+21 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:54
+22 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:56
+23 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:56
+24 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:56
+25 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:56
+26 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:35:57
+27 to repair.
+0 phones awaiting calibration/testing.['jason', 'andy'] 
+
+15:36:05
+1 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gfdsa'] 
+
+15:36:05
+2 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gfdsa'] 
+
+15:36:06
+3 to repair.
+0 phones awaiting calibration/testing.['asdf', 'gfdsa'] 
+
+15:36:34
+1 to repair.
+0 phones awaiting calibration/testing.['asdf', 'kjhgfd'] 
+
+15:36:34
+2 to repair.
+0 phones awaiting calibration/testing.['asdf', 'kjhgfd'] 
+
+15:36:39
+3 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:39
+4 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+5 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+6 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+7 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+8 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+9 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:40
+10 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+11 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+12 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+13 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+14 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+15 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:41
+16 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:42
+17 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:42
+18 to repair.
+0 phones awaiting calibration/testing.['asdf'] 
+
+15:36:45
+19 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:46
+20 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:47
+21 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:47
+22 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:48
+23 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:48
+24 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:48
+25 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:49
+26 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:49
+27 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:49
+28 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:49
+29 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs'] 
+
+15:36:54
+30 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs', 'gsahd', 'afhlg'] 
+
+15:36:54
+31 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs', 'gsahd', 'afhlg'] 
+
+15:36:56
+32 to repair.
+0 phones awaiting calibration/testing.['asdf', 'ahklgs', 'gsahd', 'afhlg'] 
+
+15:39:20
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:20
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:22
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:23
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:23
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:24
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:24
+7 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:24
+8 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:25
+9 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:25
+10 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:53
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:54
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:55
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:39:55
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:11
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:11
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:12
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:13
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:14
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:14
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:14
+7 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+15:40:14
+8 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:09:26
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:09:27
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:09:30
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:09:57
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:10:48
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:10:49
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:10:50
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:22:05
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:07
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:08
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:09
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:10
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:11
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:12
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:12
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:14
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:15
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:16
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:17
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:19
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:22
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:23
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:24
+1 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:26
+1 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:26
+1 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:27
+1 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:28
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:30
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:22:31
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+16:23:20
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:20
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:21
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:21
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:23
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:23
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:24
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:25
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:27
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:27
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:27
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:28
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:33
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:34
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:34
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:35
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:36
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:36
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:37
+2 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:37
+1 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:37
+0 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:38
+0 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:38
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:38
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:42
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:43
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:46
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:47
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:48
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:23:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:14
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:15
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:16
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:16
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:16
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:17
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:18
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:18
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:19
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:19
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:22
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:23
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:23
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:24
+2 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:24
+1 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:24
+0 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:25
+0 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:25
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:25
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:26
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:27
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:28
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:28
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:28
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:29
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:30
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:30
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:30
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:31
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:31
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:31
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:32
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:32
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:37
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:24:38
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess', 'George'] 
+
+16:30:21
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:31:35
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica'] 
+
+16:31:37
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica'] 
+
+16:31:38
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica'] 
+
+16:31:42
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:43
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:43
+6 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:44
+7 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:46
+6 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:46
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:46
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:47
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:48
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:48
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:48
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:48
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:49
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:50
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:50
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:51
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:51
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:53
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:55
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:56
+0 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:31:57
+0 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jessica', 'John'] 
+
+16:35:45
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:35:46
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:35:46
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:04
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:04
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:05
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:05
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:05
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:07
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:07
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:09
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:09
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:09
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:09
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:10
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:11
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:11
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:12
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:12
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:12
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:12
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:13
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:13
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:14
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:14
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:14
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:15
+2 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+16:38:15
+1 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+16:38:15
+0 to repair.
+3 phones awaiting calibration/testing.[''] 
+
+16:38:16
+0 to repair.
+2 phones awaiting calibration/testing.[''] 
+
+16:38:16
+0 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+16:38:16
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:16
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:16
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:17
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:19
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:19
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:19
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:19
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:20
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:20
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:20
+7 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:21
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:21
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:22
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:59
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:59
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:59
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:59
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:38:59
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:00
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:00
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:00
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:01
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:02
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:02
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:02
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:03
+3 to repair.
+1 phones awaiting calibration/testing.[''] 
+
+16:39:03
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:39:04
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:40:20
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:58:03
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:59:33
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+16:59:35
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+20:35:41
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:27:57
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+21:27:57
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+21:28:48
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+21:30:51
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:51
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:51
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:52
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:52
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:53
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:53
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:53
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:53
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:53
+6 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:54
+5 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:54
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:56
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:30:56
+4 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:55
+4 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:56
+5 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:56
+6 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:56
+5 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:57
+4 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:57
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:31:57
+4 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jess'] 
+
+21:40:51
+1 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:51
+2 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:51
+3 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:51
+4 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:52
+5 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:53
+6 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:53
+7 to repair.
+0 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:55
+6 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:55
+5 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:56
+4 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:57
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:58
+3 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:58
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:58
+5 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:40:59
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:00
+4 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:01
+5 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:02
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:03
+3 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:03
+4 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:07
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:09
+4 to repair.
+1 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:11
+3 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:11
+4 to repair.
+2 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:13
+3 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+21:41:15
+4 to repair.
+3 phones awaiting calibration/testing.['Jason', 'Jon', 'JV'] 
+
+22:11:17
+0 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:48:41
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:48:42
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:48:42
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:48:42
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:52:27
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:53:15
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:54:31
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:54:33
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:54:33
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:05
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:06
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:06
+3 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:07
+4 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:07
+5 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:07
+6 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:20
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:55:22
+2 to repair.
+0 phones awaiting calibration/testing.[''] 
+
+08:56:07
+1 to repair.
+0 phones awaiting calibration/testing.[''] 
+
