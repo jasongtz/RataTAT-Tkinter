@@ -5,7 +5,7 @@
 
 ##################
 ### TO FIX:
-	# 
+	# Search &&& for bugs or new features
 	
 
 # Modules imported
@@ -155,8 +155,9 @@ def csvlog():
 	with open("hourly_log.txt", "r+") as log:
 		done = log.readlines()
 		
-	# Checks if the hourly_log has been cleared - if so, sets hourly_data to zero values.
-	# Otherwise, writes that hour's progress to hourly_data, and clears hourly_log.txt.
+	# Checks if the hourly_log.txt has been cleared
+	# If so, sets var hourly_data to zero values.
+	# Otherwise, grabs that hour's progress to var hourly_data, and clears hourly_log.txt.
 	if "Cleared" not in done:
 		hourly_data = times, done[0], int(done[1]), int(done[2]), int(done[3])
 		with open("hourly_log.txt", "w") as log:
@@ -265,13 +266,34 @@ def report():
 	to_print.set("\nGenerating report...")
 	sendreport()
 	to_print.set("\nClosing report submitted.")
+def newsession():
+	create_csv()
+	with open("hourly_log.txt", "w") as log:
+		log.write("\nCleared")	
+def importstatus():
+	global genius
+	global hour_b
+	global hour_d
+	global hour_f
+	global rep_q
+	global calib_q
+	global fail
+	with open("hourly_log.txt", "r+") as log:
+		lines = log.readlines()
+		if lines[1] != "Cleared":
+			hour_d = int(lines[1])
+			hour_b = int(lines[2])
+			hour_f = int(lines[3])
+
+# &&& Import working! Now just to adjust active vars like rep_q, calib_q
+
 
 ### TKINTER UI APPEARANCE CODE
 
 root = tk.Tk()
 apptitle = "RataTAT v0.1"
 root.wm_title(apptitle)
-root.geometry("600x500")
+root.geometry("800x600")
 
 to_print = tk.StringVar()
 namevar = tk.StringVar()
@@ -279,7 +301,12 @@ title_text = tk.StringVar()
 
 statusvar = tk.StringVar()
 statusvar.set(tats("status"))
-	
+
+
+# &&& To implement, v0.2:
+#			pull StringVar data out of a csv or txt on each refresh
+#			therefore, REFRESH button
+# 			how to do genius names, length?
 
 # Title
 titleframe = tk.Frame(root)
@@ -339,50 +366,25 @@ console = tk.Label(consoleframe, textvariable=to_print, font = ("Heiti TC", 24))
 console.pack()
 status = tk.Label(consoleframe, textvariable=statusvar, font = ("Heiti TC", 15))
 status.pack()
+
 clearbutton = tk.Button(consoleframe, text = "Clear all", command=clearbutton)
-clearbutton.pack()
+#clearbutton.pack()
+#####################
+# &&& instead of clear, new AUDIT mode - recheck what's on the shelf
 
 reportbutton = tk.Button(consoleframe, text = "Submit EoD Report", command=report)
 reportbutton.pack()
+newsessionbutton = tk.Button(consoleframe, text = "Start Session", command = newsession)
+newsessionbutton.pack()
+importstatusbutton = tk.Button(consoleframe, text = "Import Saved Status", \
+	command = importstatus)
+importstatusbutton.pack()
 
 copyrightlabel = tk.Label(consoleframe, text = "\n\nBy Gwartz", font = ("Heiti TC", 10))
 copyrightlabel.pack()
 consoleframe.pack()
 
-#### ALT email popup
-def popupwindow():
-	
-	emailpopup = tk.Tk()
-	emailpopup.wm_title("End of Day")
-	emailpopup.geometry("300x200")
-
-	recipvar = tk.StringVar()	
-	emailvar = tk.StringVar()
-	passwordvar = tk.StringVar()
-
-	emailframe = tk.Frame(emailpopup)
-
-	enteremail = tk.Label(emailframe, text = "\n\nEnter recipient"\
-	", your address, and password.\n", font = ("Heiti TC", 12))
-	enteremail.pack()
-
-	recipin = tk.Entry(emailframe, textvariable = recipvar)
-	recipin.pack()
-	emailin = tk.Entry(emailframe, textvariable = emailvar)
-	emailin.pack()
-	passwordin = tk.Entry(emailframe, textvariable = passwordvar, show = "*")
-	passwordin.pack()
-
-	doreport = tk.Button(emailframe, text = "Send report", command = testfun())
-	doreport.pack()
-	
-	emailframe.pack()
-
-
-
 
 if __name__ == "__main__":
 	title_text.set("Enter your names.")
-	create_csv()
-	
 	root.mainloop()
