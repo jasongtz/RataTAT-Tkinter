@@ -6,6 +6,8 @@
 ##################
 ### TO FIX:
 	# Search &&& for bugs or new features
+	# Get THIS_HOUR stuff working in new class system.
+	# Line 305, names importing from saved state
 	
 
 # Modules imported
@@ -26,101 +28,133 @@ hour_f = 0
 
 names = [""]
 genius = len(names)
-rep_q = 0
-calib_q = 0
-fail = 1
+current_status = []
+
+############ NEW CONCURRENCY COMMANDS
+
+def create_log():
+	with open("log.csv", "w") as blank:
+		global names
+		topline = [str(dt.date.today()), names]
+		header = ["Batteries", "Displays", "Calibrating", "Calibration Failures"]
+		startvalues = [0, 0, 0, 0] #time.strftime("%H:%M:%S"), "", 
+		writer = csv.writer(blank, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
+		writer.writerow(topline)
+		writer.writerow(header)
+		writer.writerow(startvalues)
 
 # Rounds an integer to the nearest 15
 def calc(x):
 	return (int(round(x/15)) * 15)
 
-def tats(command):
-	
-	# import global variables used by this function	
+# &&& FIXED already issue with multiple names, done
+# TO FIX: Start point too low. 0.25 for bat, 0.5 for disp
+# How did I do this before...?
+
+def quote_battery(bq, dq):
 	global genius
-	global hour_b
-	global hour_d
-	global hour_f
-	global rep_q
-	global calib_q
-	global fail
-	
-	# Math to calculate turnaround times, using calc() to round 
-	# the value to the nearest 15.
-	battery_tat = float(calc(30.0 + ((rep_q/genius) * 15))) / 60
-	display_tat = float(calc((((rep_q + calib_q + fail) / genius) * 15 + 30))) / 60
+	tat = float(calc(15.0 + (((bq + dq)/genius) * 15))) / 60
+	return "\n Quote %s hours." % tat
+def quote_display(bq, dq, dc, df):
+	global genius
+	tat = float(calc((((bq + dq + dc + df) / genius) * 15 + 30))) / 60
+	return "\n Quote %s hours." % tat
 
-	# Return TATs or status based on input
-	if command == "b":
-		rep_q += 1
-		return "Quote %s hours." % battery_tat
-	elif command == "d":
-		rep_q += 1
-		return "Quote %s hours." % display_tat
-	elif command == "-b":
-		if rep_q > 0:
-			rep_q -= 1
-			hour_b += 1
-			return "Battery complete."
-		else:
-			return "Error! No batteries pending."
-	elif command == "-d":
-		if calib_q > 0:
-			calib_q -= 1
-			if fail > 0:
-				fail -= 1
-			hour_d += 1
-			return "Display complete."
-		else:
-			return "Error! No displays calibrating."
-	# Display related commands
-	elif command == "dc":
-		if rep_q > 0:
-			rep_q -= 1
-			calib_q += 1
-			return "Display awaiting calibration."
-		else:
-			return "Error! No displays pending."
-	elif command == "df":
-		if calib_q > 0:
-			fail += 1
-			hour_f += 1
-			return "Display failed. Attempt new display."
-		else:
-			return "Error! No displays calibrating."
 
-	# Application commands
-	elif command == "status":
-		return "\n%d phones awaiting repair. \nThere are %d phones "\
-		 "in or awaiting calibration/testing. \n" \
-		"%s repairs completed this hour.\n" % (rep_q, calib_q, (hour_b + hour_d))
-	
-	elif command == "write":
-		return "%d to repair.\n%d phones "\
-		 "awaiting calibration/testing." % (rep_q, calib_q)
-	
-	#debugging tools
-	elif command == "clear":
-		rep_q = 0
-		calib_q = 0
-		fail = 1
-		return "Cleared all queues."
-	elif command == "set":
-		rep_q = int(raw_input("Rep_q: "))
-		calib_q = int(raw_input("Calib_q: "))
-		fail = 1
-		return "Rep_q set to %d.\nCalib_q set to %d.\n" \
-		"Fail reset to default." % (rep_q, calib_q)
-	
+
+class Repairs(object):
+	def __init__(self, index, exitmessage):
+			self.index = index
+			self.exitmessage = exitmessage
+
+	def add(self):
+		# Reads the log.csv, sets it into var status, adds 1 to int at self.index
+		with open("log.csv", "rb") as file:
+			status = [row for row in csv.reader(file)]  #List comprehension
+			status[2][self.index] = int(status[2][self.index]) + 1
+
+		with open("log.csv", "wb") as file:
+			for number in range(3):
+				csv.writer(file, delimiter=",").writerow(status[number])
+		global current_status
+		current_status = [int(numbers) for numbers in status[2]]
+		if self.index == 0:
+			return quote_battery(current_status[0], current_status[1])
+		elif self.index == 1:
+			return quote_display(current_status[0], current_status[1], \
+				current_status[2], current_status[3])
+
+	def remove(self):
+		# Reads the log.csv, sets it into var status, subtracts 1 to int at self.index
+		with open("log.csv", "rb") as file:
+			status = [row for row in csv.reader(file)]  #List comprehension
+			x = int(status[2][self.index])
+			if x > 0:
+				status[2][self.index] = x - 1
+			else:
+				return "\nError!"
+		with open("log.csv", "wb") as file:
+			for number in range(3):
+				csv.writer(file, delimiter=",").writerow(status[number])	
+		global current_status
+		current_status = [int(numbers) for numbers in status[2]]
+		if self.index == [3]:
+			pass
+		else:
+			return self.exitmessage
+
+# Instantiates all repair/movement types
+battery = Repairs(0, "\nBattery complete.")
+display = Repairs(1, "\nDisplay awaiting calibration.")
+calib = Repairs(2, "\nDisplay complete.")
+fail = Repairs(3, None)
+
+def run_b():
+	to_print.set(battery.add())
+	eachactionupdate()
+def run_nb():
+	to_print.set(battery.remove())
+	eachactionupdate()
+def run_d():
+	to_print.set(display.add())
+	eachactionupdate()
+def run_dc():
+	to_print.set(display.remove()) 
+	if to_print.get() == "\nError!":
+		pass
 	else:
-		return "Error!"
+		calib.add()
+	eachactionupdate()
+def run_df():
+	fail.add()
+	to_print.set("\nDisplay failed, attempt again.")
+	eachactionupdate()
+def run_nd():
+	to_print.set(calib.remove())
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+		if int(status[2][3]) > 0:
+			fail.remove()
+	eachactionupdate()
 
-def log():
+def refresh():
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+		global current_status
+		current_status = [int(numbers) for numbers in status[2]]
+	eachactionupdate()
+
+
+
+
+
+
+def hourly_log():
 	global hour_d
 	global hour_b
 	global hour_f
 	
-	# Checks if hourly_log is cleared. If so: resets the hour values to zero	.	
+	# Checks if hourly_log is cleared. If so: resets the hour values to zero
 	with open("hourly_log.txt", "r+") as log:
 		lines = log.readlines()
 		if lines[1] == "Cleared":
@@ -134,11 +168,11 @@ def log():
 
 
 
-#### CSV FUNCTIONS 
+#### DAILYDATA CSV FUNCTIONS 
 
 ## Creates the blank csv with layout info, to be called at application start.
 def create_csv():
-	with open("data.csv", "w") as blank:
+	with open("dailydata.csv", "w") as blank:
 		todays_date = [str(dt.date.today())]
 		header = ["Time", "Names", "Batteries", "Displays", "Calibration Failures"]
 		writer = csv.writer(blank, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
@@ -146,7 +180,7 @@ def create_csv():
 		writer.writerow(header)
 
 # Formats the hourly progress information from hourly_log.txt,
-# writes this into data.csv.
+# writes this into dailydata.csv.
 def csvlog():
 	done = []
 	times = time.strftime("%H:%M")
@@ -166,7 +200,7 @@ def csvlog():
 		hourly_data = times, done[0], 0, 0, 0
 
 	# Appends the CSV with the values in hourly_data.
-	with open("data.csv", "a") as f:
+	with open("dailydata.csv", "a") as f:
 		#declare the writing variable
 		writer = csv.writer(f, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
 		writer.writerow(hourly_data)
@@ -206,7 +240,7 @@ def sendreport():
 	msg['To'] = recip
 	msg.preamble = "Daily report."
 	msg.attach(MIMEText("Report attached."))
-	file = "data.csv"
+	file = "dailydata.csv"
 	fp = open(file, "rb")
 	to_attach = MIMEText(fp.read())
 	fp.close()
@@ -227,7 +261,11 @@ def sendreport():
 ### TKINTER UI FUNCTIONAL CODE which calls from functional code above
 
 def get_status():
-	statusvar.set(tats("status"))
+	statusvar.set("\n%d batteries, %d displays awaiting repair. \nThere are %d phones "\
+		 "in or awaiting calibration/testing. \n" \
+		"%s repairs completed this hour.\n" % \
+		(current_status[0], current_status[1], current_status[2], 645326234)) # &&&
+
 
 def eachactionupdate():
 	global names
@@ -235,30 +273,15 @@ def eachactionupdate():
 	global genius
 	genius = len(names)
 
-	with open("status.txt", "a") as status:
-		status.write(time.strftime("%H:%M:%S") + "\n" \
-			 + tats("write") + "%s \n\n" % names)
-	log()
+	#with open("status.txt", "a") as status:
+	#	status.write(time.strftime("%H:%M:%S") + "\n" \
+	#		 + tats("write") + "%s \n\n" % names)
+	hourly_log()
 	get_status()
 
-def run_b():
-	to_print.set("\n" + tats("b"))
-	eachactionupdate()
-def run_d():
-	to_print.set("\n" + tats("d"))
-	eachactionupdate()
-def run_nb():
-	to_print.set("\n" + tats("-b"))
-	eachactionupdate()
-def run_nd():
-	to_print.set("\n" + tats("-d"))
-	eachactionupdate()
-def run_dc():
-	to_print.set("\n" + tats("dc"))
-	eachactionupdate()
-def run_df():
-	to_print.set("\n" + tats("df"))
-	eachactionupdate()
+
+# All functional buttons relocated above, near class system
+
 def clearbutton():
 	to_print.set("\n" + tats("clear"))
 	eachactionupdate()
@@ -269,23 +292,29 @@ def report():
 def newsession():
 	create_csv()
 	with open("hourly_log.txt", "w") as log:
-		log.write("\nCleared")	
+		log.write("\nCleared")
+	create_log()	
 def importstatus():
-	global genius
-	global hour_b
 	global hour_d
+	global hour_b
 	global hour_f
-	global rep_q
-	global calib_q
-	global fail
+	global names
+	
 	with open("hourly_log.txt", "r+") as log:
 		lines = log.readlines()
 		if lines[1] != "Cleared":
+			# &&& Get the names importing to work - infinte loop, /""/"s etc
+			names = lines[0]
+			
+			namevar.set(names)
+			
 			hour_d = int(lines[1])
 			hour_b = int(lines[2])
 			hour_f = int(lines[3])
 
-# &&& Import working! Now just to adjust active vars like rep_q, calib_q
+	refresh()
+	
+# &&& To do: Import status from log.csv
 
 
 ### TKINTER UI APPEARANCE CODE
@@ -298,15 +327,16 @@ root.geometry("800x600")
 to_print = tk.StringVar()
 namevar = tk.StringVar()
 title_text = tk.StringVar()
-
 statusvar = tk.StringVar()
-statusvar.set(tats("status"))
 
+# initial message
+to_print.set("\nEnter your names above.")		
+statusvar.set("\nChoose Start or Import below.\n")
 
 # &&& To implement, v0.2:
-#			pull StringVar data out of a csv or txt on each refresh
-#			therefore, REFRESH button
-# 			how to do genius names, length?
+#			pull StringVar data out of a csv or txt on each refresh - DONE
+#			therefore, REFRESH button - DONE
+# 			how to do genius names, length? - TO DO TO DO TO DO
 
 # Title
 titleframe = tk.Frame(root)
@@ -358,9 +388,9 @@ displaycomplete.grid(row=1, column=4)
 
 buttonframe.pack()
 
+
 # Console output frame
 
-to_print.set("\nEnter your names above.")		# initial message
 consoleframe = tk.Frame(root)
 console = tk.Label(consoleframe, textvariable=to_print, font = ("Heiti TC", 24))
 console.pack()
@@ -380,7 +410,8 @@ importstatusbutton = tk.Button(consoleframe, text = "Import Saved Status", \
 	command = importstatus)
 importstatusbutton.pack()
 
-copyrightlabel = tk.Label(consoleframe, text = "\n\nBy Gwartz", font = ("Heiti TC", 10))
+copyrightlabel = tk.Label(consoleframe, text = "\n\nDesigned by Jason in London", \
+	font = ("Heiti TC", 10))
 copyrightlabel.pack()
 consoleframe.pack()
 
@@ -388,3 +419,54 @@ consoleframe.pack()
 if __name__ == "__main__":
 	title_text.set("Enter your names.")
 	root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+########### TO REMOVE
+def tats(command):
+	
+	# import global variables used by this function	
+	global genius
+	global hour_b
+	global hour_d
+	global hour_f
+	global rep_q
+	global calib_q
+	global fail
+	
+	# Math to calculate turnaround times, using calc() to round 
+	# the value to the nearest 15.
+	
+	# Return TATs or status based on input
+		
+		### REMOVED EVERYTHING HERE, built into new class system above
+	
+	if command == "write":
+		return "%d to repair.\n%d phones "\
+		 "awaiting calibration/testing." % (rep_q, calib_q)
+	
+	#debugging tools
+	elif command == "clear":
+		rep_q = 0
+		calib_q = 0
+		fail = 1
+		return "Cleared all queues."
+	elif command == "set":
+		rep_q = int(raw_input("Rep_q: "))
+		calib_q = int(raw_input("Calib_q: "))
+		fail = 1
+		return "Rep_q set to %d.\nCalib_q set to %d.\n" \
+		"Fail reset to default." % (rep_q, calib_q)
+	
+	else:
+		return "Error!"
