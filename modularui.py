@@ -6,10 +6,9 @@
 ##################
 ### TO FIX:
 	# Search &&& for bugs or new features
-	# Line 305, names importing from saved state
 	# Possible alternative, next vers: sign in with your name only
-	
-
+	# &&& When changing number of geniuses, takes an extra turn to take effect!
+	# &&& 
 # Modules imported
 import Tkinter as tk
 import time
@@ -49,10 +48,11 @@ def calc(x):
 
 # &&& CHECK IF FIXED: Start point too low. 0.25 for bat, 0.5 for disp
 # Adjusted + x values for batt and display, should have fixed
+	# ACTUALLY now, start values are too high!
 
 def quote_battery(bq, dq):
 	global genius
-	tat = float(calc(30.0 + (((bq + dq)/genius) * 15))) / 60
+	tat = float(calc((((bq + dq)/genius) * 15 + 30))) / 60
 	return "\n Quote %s hours." % tat
 def quote_display(bq, dq, dc, df):
 	global genius
@@ -107,64 +107,29 @@ display = Repairs(1, "\nDisplay awaiting calibration.")
 calib = Repairs(2, "\nDisplay complete.")
 fail = Repairs(3, None)
 
-def run_b():
-	to_print.set(battery.add())
-	eachactionupdate()
-def run_nb():
-	to_print.set(battery.remove())
-	global hour_b
-	hour_b += 1
-	eachactionupdate()
-def run_d():
-	to_print.set(display.add())
-	eachactionupdate()
-def run_dc():
-	to_print.set(display.remove()) 
-	if to_print.get() == "\nError!":
-		pass
-	else:
-		calib.add()
-	eachactionupdate()
-def run_df():
-	fail.add()
-	to_print.set("\nDisplay failed, attempt again.")
-	global hour_f
-	hour_f += 1
-	eachactionupdate()
-def run_nd():
-	to_print.set(calib.remove())
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-		if int(status[2][3]) > 0:
-			fail.remove()
+
+
+def hourly_in():
 	global hour_d
-	hour_d += 1
-	eachactionupdate()
-
-def refresh():
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-		global current_status
-		current_status = [int(numbers) for numbers in status[2]]
-	eachactionupdate()
-
-
-
-
+	global hour_b
+	global hour_f
+	with open("hourly_log.txt", "r+") as log:
+		lines = log.readlines()
+	if lines[1] == "Cleared":
+		hour_d = 0
+		hour_b = 0
+		hour_f = 0
+	else:
+		hour_d = int(lines[1])
+		hour_b = int(lines[2])
+		hour_f = int(lines[3])
+		
+	 
 
 def hourly_log():
 	global hour_d
 	global hour_b
 	global hour_f
-	
-	# Checks if hourly_log is cleared. If so: resets the hour values to zero
-	with open("hourly_log.txt", "r+") as log:
-		lines = log.readlines()
-		if lines[1] == "Cleared":
-			hour_d = 0
-			hour_b = 0
-			hour_f = 0
-
 	# Updates the hourly log txt file.
 	with open("hourly_log.txt", "w") as log:
 		log.write(str(names) + "\n%d\n%d\n%d" % (hour_b, hour_d, hour_f))
@@ -310,23 +275,62 @@ def eachactionupdate():
 	names = namevar.get().split(", ")
 	global genius
 	genius = len(names)
-
-	#with open("status.txt", "a") as status:
-	#	status.write(time.strftime("%H:%M:%S") + "\n" \
-	#		 + tats("write") + "%s \n\n" % names)
 	hourly_log()
 	get_status()
 
 
 # All functional buttons relocated above, near class system
 
-def clearbutton():
-	to_print.set("\n" + tats("clear"))
+def run_b():
+	hourly_in()
+	to_print.set(battery.add())
 	eachactionupdate()
-def report():
-	to_print.set("\nGenerating report...")
-	sendreport()
-	to_print.set("\nClosing report submitted.")
+def run_nb():
+	hourly_in()
+	global hour_b
+	if current_status[0]>=1:
+		hour_b += 1
+	to_print.set(battery.remove())
+	eachactionupdate()
+def run_d():
+	hourly_in()
+	to_print.set(display.add())
+	eachactionupdate()
+def run_dc():
+	hourly_in()
+	to_print.set(display.remove()) 
+	if to_print.get() == "\nError!":
+		pass
+	else:
+		calib.add()
+	eachactionupdate()
+def run_df():
+	hourly_in()
+	global hour_f
+	if current_status[1]>=1:
+		hour_f += 1
+	fail.add()
+	to_print.set("\nDisplay failed, attempt again.")
+		eachactionupdate()
+def run_nd():
+	hourly_in()
+	global hour_d
+	if current_status[2]>=1:
+		hour_d += 1		
+	to_print.set(calib.remove())
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+		if int(status[2][3]) > 0:
+			fail.remove()
+	eachactionupdate()
+def refresh():
+	hourly_in()
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+		global current_status
+		current_status = [int(numbers) for numbers in status[2]]
+	eachactionupdate()
+
 def newsession():
 	create_csv()
 	with open("hourly_log.txt", "w") as log:
@@ -340,9 +344,9 @@ def newsession():
 	hour_d = 0
 	hour_f = 0
 	create_log()
+	hourly_log()
 	refresh()
-	to_print.set("\nFire when ready.")
-	
+	to_print.set("\nFire when ready.")	
 def importstatus():
 	global hour_d
 	global hour_b
@@ -362,16 +366,22 @@ def importstatus():
 			hour_b = int(lines[2])
 			hour_f = int(lines[3])
 	refresh()
-	
-# &&& To do: Import status from log.csv
 
+def clearbutton():
+	to_print.set("\n" + tats("clear"))
+	eachactionupdate()
+def report():
+	to_print.set("\nGenerating report...")
+	sendreport()
+	to_print.set("\nClosing report submitted.")
+	
 
 ### TKINTER UI APPEARANCE CODE
 
 root = tk.Tk()
 apptitle = "RataTAT v0.1.1"
 root.wm_title(apptitle)
-root.geometry("800x600")
+root.geometry("600x700")
 
 to_print = tk.StringVar()
 namevar = tk.StringVar()
