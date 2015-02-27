@@ -1,4 +1,4 @@
-['Alan', 'Jason', 'Mack']
-5
-7
-3
+['Jason', 'Al']
+0
+0
+0
