@@ -1,5 +1,9 @@
 # Bar version
 
+### TO FIX:
+	# Repairs this hour doesnt work. Why? Find out.
+	# Times formatting as "0 and 1/2 hours". Fix?
+
 import Tkinter as tk
 import modularui as m
 import time
@@ -19,9 +23,10 @@ def countdown():
 		num = 3
 		set_label()
 		countervar.set("")
+		
 def set_label():
-	m.to_print.set("\nFire when ready.")
-
+	m.displaymessage()
+	
 def quote_b():
 	global num
 	if num == 3:
@@ -32,6 +37,14 @@ def quote_d():
 	if num == 3:
 		m.run_d()
 		countdown()
+def refresh():
+	m.refresh()
+	set_label()
+
+def getnames():
+	m.beforeeachaction()
+	return str(m.names).replace("\n", "").replace("[", "").\
+		replace("]", "").replace("'", "")
 
 class App(tk.Frame):
 	def __init__(self, master):
@@ -44,7 +57,7 @@ class NameFrame(App):
 		tk.Frame.__init__(self, parent)
 		titlelabel = tk.Label(self, text = "\n" + apptitle, \
 			font = ("Heiti TC", 32)).pack()
-		whosrepairinglabel = tk.Label(self, text = "\n" + m.namevar.get() + \
+		whosrepairinglabel = tk.Label(self, text = "\n" + getnames() + \
 			" doing repairs.", font = ("Heiti TC", 12)).pack()
 		spacerhead = tk.Label(self, text = "").pack()
 	
@@ -68,7 +81,7 @@ class ConsoleFrame(App):
 		counter = tk.Label(self, textvariable=countervar, font = ("Heiti TC", 12)).pack()
 		status = tk.Label(self, textvariable=m.statusvar, font = ("Heiti TC", 15)).pack()
 		refreshbutton = tk.Button(self, text = "Refresh Status", \
-			command = m.refresh).pack()
+			command = refresh).pack()
 		spacer1 = tk.Label(self, text = "").pack()
 		copyrightlabel = tk.Label(self, text = "\n\nDesigned by Jason in London\n", \
 			font = ("Heiti TC", 10)).pack()
@@ -92,13 +105,17 @@ def main():
 	apptitle = "RataTAT v0.1.1"
 	root.wm_title(apptitle)
 	root.geometry("600x500")
-	
+
 	global countervar
 	countervar = tk.StringVar()
+	
+		
 	m.for_import()
 	set_label()
-	m.eachactionupdate()
-	
+	#m.refresh()
+
+
+
 	NameFrame(root).pack()
 	ButtonFrame(root).pack()
 	ConsoleFrame(root).pack()

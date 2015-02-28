@@ -1,11 +1,8 @@
 #! /usr/bin/python
 # RataTAT!
 
-### TO FIX:
 	# Search &&& for bugs or new features
-	# Possible alternative, next vers: sign in with your name only
 	# &&& When changing number of geniuses, takes an extra turn to take effect!
-	
 
 #	Modules imported
 import Tkinter as tk
@@ -19,6 +16,45 @@ from email.mime.multipart import MIMEMultipart
 hour_b = None
 hour_d = None
 hour_f = None
+
+#	EMAIL REPORT FUNCTION
+def sendemail(recip, subject, message):
+	# Reads txt file to pull recipient and login info
+	with open("emaildata.txt", "r") as file:
+		data = file.readlines()
+	if "Feedback" in subject:	
+		recip = data[0].strip("\n")
+	elif "Report" in subject:
+		recip = data[1].strip("\n")
+	email = data[2].strip("\n")
+	password = data[3].strip("\n")
+
+	# Generates the message
+	msg = MIMEMultipart()
+	msg['Subject'] = subject
+	msg['From'] = email
+	msg['To'] = recip
+	msg.preamble = None
+	msg.attach(MIMEText(message))
+	
+	# Attaches the daily report
+	if "Report" in subject:
+		msg.attach(MIMEText("Report attached."))
+		file = "dailydata.csv"
+		fp = open(file, "rb")
+		to_attach = MIMEText(fp.read())
+		fp.close()
+		to_attach.add_header("Content-Disposition", "attachment", \
+			 filename = "modular %s.csv" % str(dt.datetime.today()))
+		msg.attach(to_attach)
+	
+	smtpserver = smtplib.SMTP('smtp.mail.me.com', 587)
+	smtpserver.ehlo()
+	smtpserver.starttls()
+	smtpserver.ehlo
+	smtpserver.login(email, password)
+	smtpserver.sendmail(email, recip, msg.as_string())
+	smtpserver.quit()
 
 #	DAILYDATA CSV FUNCTIONS 
 
@@ -73,7 +109,6 @@ def csv_autolog():
 		else:
 			time.sleep(60)
 
-
 #	CURRENT AND HOURLY LOGGING FUNCTIONS
 
 # Creates the blank template of the current status log
@@ -96,62 +131,22 @@ def hourly_in():
 	with open("hourly_log.txt", "r+") as log:
 		lines = log.readlines()
 	if lines[1] == "Cleared":
-		hour_d = 0
 		hour_b = 0
+		hour_d = 0
 		hour_f = 0
 	else:
-		hour_d = int(lines[1])
-		hour_b = int(lines[2])
+		hour_b = int(lines[1])
+		hour_d = int(lines[2])
 		hour_f = int(lines[3])
 
 # Writes the update data to the hourly_log file.
 def hourly_log():
-	global hour_d
+	global names
 	global hour_b
+	global hour_d
 	global hour_f
 	with open("hourly_log.txt", "w") as log:
-		log.write(str(names) + "\n%d\n%d\n%d" % (hour_b, hour_d, hour_f))
-
-
-#	EMAIL REPORT FUNCTION
-def sendemail(recip, subject, message):
-	# Reads txt file to pull recipient and login info
-	with open("emaildata.txt", "r") as file:
-		data = file.readlines()
-	if "Feedback" in subject:	
-		recip = data[0].strip("\n")
-	elif "Report" in subject:
-		recip = data[1].strip("\n")
-	email = data[2].strip("\n")
-	password = data[3].strip("\n")
-
-	# Generates the message
-	msg = MIMEMultipart()
-	msg['Subject'] = subject
-	msg['From'] = email
-	msg['To'] = recip
-	msg.preamble = None
-	msg.attach(MIMEText(message))
-	
-	# Attaches the daily report
-	if "Report" in subject:
-		msg.attach(MIMEText("Report attached."))
-		file = "dailydata.csv"
-		fp = open(file, "rb")
-		to_attach = MIMEText(fp.read())
-		fp.close()
-		to_attach.add_header("Content-Disposition", "attachment", \
-			 filename = "modular %s.csv" % str(dt.datetime.today()))
-		msg.attach(to_attach)
-	
-	smtpserver = smtplib.SMTP('smtp.mail.me.com', 587)
-	smtpserver.ehlo()
-	smtpserver.starttls()
-	smtpserver.ehlo
-	smtpserver.login(email, password)
-	smtpserver.sendmail(email, recip, msg.as_string())
-	smtpserver.quit()
-
+		log.write(str(names) + "\n%s\n%s\n%s" % (hour_b, hour_d, hour_f))
 
 #	APPLICATION FUNCTIONAL CODE
 
@@ -164,9 +159,12 @@ def calc(x):
 	return (int(round(x/15)) * 15)
 
 def round_tat(num):
+	remain = num%1
 	if num.is_integer() == False:
-		remain = num%1
-		return str(int(num-remain)) + " and " + str(Fraction(remain))
+		if num > 1:
+			return str(int(num-remain)) + " and " + str(Fraction(remain))
+		else:
+			return str(Fraction(remain))
 	else:
 		return int(num)
 
@@ -232,39 +230,87 @@ fail = Repairs(3, None)
 
 #	TKINTER UI FUNCTIONAL CODE which calls from functional code above
 
-def get_status():
-	statusvar.set("\n%d batteries, %d displays awaiting repair. \nThere are %d phones "\
-		 "in or awaiting calibration/testing. \n" \
-		"%s repairs completed this hour.\n" % \
-		(current_status[0], current_status[1], current_status[2], (hour_b + hour_d)))
 
-def eachactionupdate():
+def refresh():
+	beforeeachaction()
+	eachactionupdate()
+
+
+def beforeeachaction():
+	hourly_in()
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+	stringnames = status[0][1].replace("\n", "").replace("[", "").\
+		replace("]", "").replace("'", "")
+	global namevar
+	namevar.set(stringnames)
+	global current_status
+	current_status = [int(numbers) for numbers in status[2]]
 	global names
 	names = namevar.get().split(", ")
 	global genius
 	genius = len(names)
+
+# Used to refresh the status message
+def get_status():
+	statusvar.set("\n%d batteries/other, %d displays awaiting repair." \
+		"\nThere are %d phones in or awaiting calibration/testing. \n" \
+		"%s repairs completed so far this hour.\n" % \
+		(current_status[0], current_status[1], current_status[2], (hour_b + hour_d)))
+
+def displaymessage():
+	with open("message.txt", "r") as file:
+		message = file.readline()
+		to_print.set("\n" + message)
+
+countdownnum = 3
+def eachactionupdate():
+	global root
 	hourly_log()
 	get_status()
-
+	if __name__ == "__main__":
+		global countdownnum
+		countdownnum -= 1
+		if countdownnum >= 0:
+			root.after(1000, eachactionupdate)
+		else:
+			displaymessage()		
+			countdownnum = 3
+	
+	
 # Button respond functions
 
+# Responds to Set Names button
+def set_names():
+	global namevar
+	global genius
+	global names
+	names = namevar.get().split(", ")
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+		status[0][1] = str(names)
+	with open("log.csv", "w") as file:
+		for number in range(3):
+			csv.writer(file, delimiter=",").writerow(status[number])	
+	refresh()
+
 def run_b():
-	hourly_in()
+	beforeeachaction()
 	to_print.set(battery.add())
 	eachactionupdate()
 def run_nb():
-	hourly_in()
+	beforeeachaction()
 	global hour_b
 	if current_status[0]>=1:
 		hour_b += 1
 	to_print.set(battery.remove())
 	eachactionupdate()
 def run_d():
-	hourly_in()
+	beforeeachaction()
 	to_print.set(display.add())
 	eachactionupdate()
 def run_dc():
-	hourly_in()
+	beforeeachaction()
 	to_print.set(display.remove()) 
 	if to_print.get() == "\nError!":
 		pass
@@ -272,7 +318,7 @@ def run_dc():
 		calib.add()
 	eachactionupdate()
 def run_df():
-	hourly_in()
+	beforeeachaction()
 	global hour_f
 	if current_status[1]>=1:
 		hour_f += 1
@@ -280,7 +326,7 @@ def run_df():
 	to_print.set("\nDisplay failed, attempt again.")
 	eachactionupdate()
 def run_nd():
-	hourly_in()
+	beforeeachaction()
 	global hour_d
 	if current_status[2]>=1:
 		hour_d += 1		
@@ -290,48 +336,16 @@ def run_nd():
 		if int(status[2][3]) > 0:
 			fail.remove()
 	eachactionupdate()
-def refresh():
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-		global current_status
-		current_status = [int(numbers) for numbers in status[2]]
-	eachactionupdate()
 
-def newsession():
-	# In case new session is created because of a crash, sends daily report.
-	report()	
-	#Sets up all variables to blank, creates new log files.
-	create_csv()
-	with open("hourly_log.txt", "w") as log:
-		log.write("\nCleared")
-	global names
-	names = namevar.get()
-	global hour_d
-	global hour_b
-	global hour_f
-	hour_b = 0
-	hour_d = 0
-	hour_f = 0
-	create_log()
-	hourly_log()
+def setmessage():
+	with open("message.txt", "w") as file:
+		file.write(setmessagevar.get())
 	refresh()
-	to_print.set("\nFire when ready.")	
-def importstatus():
-	global hour_d
-	global hour_b
-	global hour_f
-	with open("hourly_log.txt", "r+") as log:
-		lines = log.readlines()
-		if lines[1] != "Cleared":
-			hour_d = int(lines[1])
-			hour_b = int(lines[2])
-			hour_f = int(lines[3])
-
-			setnames = lines[0].replace("\n", "").replace("[", "").\
-					replace("]", "").replace("'", "")
-			namevar.set(setnames)	
+def defaultmessage():
+	with open("message.txt", "w") as file:
+		file.write("All clear. Fire when ready.")
 	refresh()
-
+	
 def report():
 	to_print.set("\nGenerating report...")
 	sendemail("gwartz@icloud.com", "Modular Report for %s" % str(dt.date.today()), \
@@ -342,8 +356,10 @@ def sendfeedback():
 		"%s: \n\n %s" % (names, feedbackvar.get()))
 	feedbackvar.set("Feedback submitted. Thanks!")
 
-### TKINTER UI APPEARANCE CODE
-#&&& TO DO: add in comments for all these classes
+	
+
+
+### TKINTER UI APPEARANCE CODE 		#&&& TO DO: add in comments for all these classes
 
 class App(tk.Frame):
 	def __init__(self, master):
@@ -358,7 +374,10 @@ class NameFrame(App):
 			apptitle, font = ("Heiti TC", 32)).pack()
 		namesofgeniuseslabel = tk.Label(self, text = "\nNames of Geniuses:", \
 			font = ("Heiti TC", 12)).pack()
-		namesinput = tk.Entry(self, textvariable = namevar).pack()
+		namesinput = tk.Entry(self, textvariable = namevar)
+		namesinput.pack()
+		namesbutton = tk.Button(self, text = "Set Names", command = set_names)
+		namesbutton.pack()
 		spacerhead = tk.Label(self, text = "").pack()
 		namesinput.insert(0, "")
 
@@ -376,7 +395,7 @@ class ButtonFrame(App):
 		spacer1.grid(row=0, column=1)
 		displayquote = tk.Button(self, text = "Quote Display", command = run_d)
 		displayquote.grid(row=0, column=2)
-		displaycalib = tk.Button(self, text = "Display Calibrating", command = run_dc)
+		displaycalib = tk.Button(self, text = "Awaiting Calibration", command = run_dc)
 		displaycalib.grid(row=0, column=4)
 		spacer2 = tk.Label(self, text="  ")
 		spacer2.grid(row=0, column=3)
@@ -401,20 +420,53 @@ class ConsoleFrame(App):
 		spacer1 = tk.Label(self, text = "").pack()
 		newsessionbutton = tk.Button(self, text = "Start New Session", \
 		command=newsession).pack()
-		importstatusbutton = tk.Button(self, text = "Import Saved Status", \
-			command = importstatus).pack()
+		#### REPLACE IMPORT WITH REFRESH
+		#importstatusbutton = tk.Button(self, text = "Import Saved Status", \
+		#	command = importstatus).pack()
 		spacer2 = tk.Label(self, text = "").pack()
 		reportbutton = tk.Button(self, text = "Email EoD Report", command=report).pack()
-		copyrightlabel = tk.Label(self, text = "\n\nDesigned by Jason in London\n", \
-			font = ("Heiti TC", 10)).pack()
+		
+class SetMessageFrame(App):
+	def __init__(self, parent):
+		tk.Frame.__init__(self, parent)
+		spacer = tk.Label(self, text = "").pack()
+		global setmessagevar
+		messageinput = tk.Entry(self, width=50, textvariable = setmessagevar).pack()
+		setmessagebutton = tk.Button(self, text = "Set Emergency Message", \
+			 command = setmessage).pack()
+		defaultmessagebutton = tk.Button(self, text = "Set Default Message", \
+			command = defaultmessage).pack()
+
 
 class FeedbackFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)
 		global feedbackvar
+		#spacer = tk.Label(self, text = "").pack()
+		copyrightlabel = tk.Label(self, text = "\n\nDesigned by Jason in London\n", \
+			font = ("Heiti TC", 10)).pack()
 		feedbackinput = tk.Entry(self, width=30, textvariable = feedbackvar).pack()
 		feedbackbutton = tk.Button(self, text = "Submit Feedback", \
 			 command = sendfeedback).pack()
+
+
+
+def newsession():
+	#Sets up all variables to blank, creates new log files.
+	create_csv()
+	set_names()
+	with open("hourly_log.txt", "w") as log:
+		log.write("%s\nCleared" % names)
+	global hour_d
+	global hour_b
+	global hour_f
+	hour_b = 0
+	hour_d = 0
+	hour_f = 0
+	create_log()
+	hourly_log()
+	refresh()
+	defaultmessage()
 
 def for_import():
 	global statusvar
@@ -425,15 +477,16 @@ def for_import():
 	feedbackvar = tk.StringVar()
 	global namevar
 	namevar = tk.StringVar()
-	importstatus()
+	#refresh()
 	global names
 
 def main():
+	global root
 	root = tk.Tk()
 	global apptitle
 	apptitle = "RataTAT v0.1.1"
 	root.wm_title(apptitle)
-	root.geometry("600x700")
+	root.geometry("600x750")
 
 	global statusvar
 	statusvar = tk.StringVar()
@@ -443,15 +496,20 @@ def main():
 	feedbackvar = tk.StringVar()
 	global namevar
 	namevar = tk.StringVar()
+	global setmessagevar
+	setmessagevar = tk.StringVar()
 	
-	to_print.set("\nEnter your names above.")		
-	statusvar.set("\nChoose Start or Import below.\n")
-	
+	to_print.set("\nLoading...")		
+	#statusvar.set("\nChoose Start or Import below.\n")
+		
 	NameFrame(root).pack()
 	ButtonFrame(root).pack()
 	ConsoleFrame(root).pack()
+	SetMessageFrame(root).pack()
 	FeedbackFrame(root).pack()
-	
+
+	refresh()
+		
 	root.mainloop()
 
 if __name__ == "__main__":
