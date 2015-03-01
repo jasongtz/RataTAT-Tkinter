@@ -1,10 +1,8 @@
 #! /usr/bin/python
 # RataTAT!
+# Search &&& for bugs or new features
 
-	# Search &&& for bugs or new features
-	# &&& When changing number of geniuses, takes an extra turn to take effect!
-
-#	Modules imported
+#	Modules imported and starting global variables
 import Tkinter as tk
 import time
 import datetime as dt
@@ -13,9 +11,13 @@ import csv
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
 hour_b = None
 hour_d = None
 hour_f = None
+names = [""]
+genius = len(names)
+current_status = []
 
 #	EMAIL REPORT FUNCTION
 def sendemail(recip, subject, message):
@@ -39,7 +41,6 @@ def sendemail(recip, subject, message):
 	
 	# Attaches the daily report
 	if "Report" in subject:
-		msg.attach(MIMEText("Report attached."))
 		file = "dailydata.csv"
 		fp = open(file, "rb")
 		to_attach = MIMEText(fp.read())
@@ -47,6 +48,27 @@ def sendemail(recip, subject, message):
 		to_attach.add_header("Content-Disposition", "attachment", \
 			 filename = "modular %s.csv" % str(dt.datetime.today()))
 		msg.attach(to_attach)
+	
+	# Attaches the daily, hourly, and current log files to a feedback submission
+	if "Feedback" in subject:
+		file1 = "dailydata.csv"
+		fp1 = open(file1, "rb")
+		to_attach1 = MIMEText(fp1.read())
+		fp1.close()
+		to_attach1.add_header("Content-Disposition", "attachment", filename = file1)
+		file2 = "hourly_log.txt"
+		fp2 = open(file2, "rb")
+		to_attach2 = MIMEText(fp2.read())
+		fp2.close()
+		to_attach2.add_header("Content-Disposition", "attachment", filename = file2)
+		file3 = "log.csv"
+		fp3 = open(file3, "rb")
+		to_attach3 = MIMEText(fp3.read())
+		fp3.close()
+		to_attach3.add_header("Content-Disposition", "attachment", filename = file3)
+		msg.attach(to_attach1) 
+		msg.attach(to_attach2)
+		msg.attach(to_attach3)
 	
 	smtpserver = smtplib.SMTP('smtp.mail.me.com', 587)
 	smtpserver.ehlo()
@@ -150,10 +172,6 @@ def hourly_log():
 
 #	APPLICATION FUNCTIONAL CODE
 
-names = [""]
-genius = len(names)
-current_status = []
-
 # Rounds an integer to the nearest 15
 def calc(x):
 	return (int(round(x/15)) * 15)
@@ -167,9 +185,6 @@ def round_tat(num):
 			return str(Fraction(remain))
 	else:
 		return int(num)
-
-# &&& CHECK IF FIXED: Start point off?
-# &&& Also fix that it takes an extra update for changes in int(genius) to take effect!
 
 def quote_battery(bq, dq):
 	global genius
@@ -235,6 +250,17 @@ def refresh():
 	beforeeachaction()
 	eachactionupdate()
 
+# Used to refresh the status message
+def get_status():
+	statusvar.set("\n%d batteries/other, %d displays awaiting repair." \
+		"\nThere are %d phones in or awaiting calibration/testing. \n" \
+		"%s repairs completed so far this hour.\n" % \
+		(current_status[0], current_status[1], current_status[2], (hour_b + hour_d)))
+
+def displaymessage():
+	with open("message.txt", "r") as file:
+		message = file.readline()
+		to_print.set("\n" + message)
 
 def beforeeachaction():
 	hourly_in()
@@ -251,32 +277,28 @@ def beforeeachaction():
 	global genius
 	genius = len(names)
 
-# Used to refresh the status message
-def get_status():
-	statusvar.set("\n%d batteries/other, %d displays awaiting repair." \
-		"\nThere are %d phones in or awaiting calibration/testing. \n" \
-		"%s repairs completed so far this hour.\n" % \
-		(current_status[0], current_status[1], current_status[2], (hour_b + hour_d)))
-
-def displaymessage():
-	with open("message.txt", "r") as file:
-		message = file.readline()
-		to_print.set("\n" + message)
-
-countdownnum = 3
+countdownnum = 2
 def eachactionupdate():
-	global root
 	hourly_log()
 	get_status()
 	if __name__ == "__main__":
 		global countdownnum
-		countdownnum -= 1
-		if countdownnum >= 0:
-			root.after(1000, eachactionupdate)
+		if countdownnum == 2:
+			countdown()
 		else:
-			displaymessage()		
-			countdownnum = 3
-	
+			pass
+			
+def countdown():
+	global root
+	global countdownnum
+	countervar.set("Wait " + str(countdownnum) + " more seconds.")
+	if countdownnum > 0:
+		countdownnum -= 1
+		root.after(1000, countdown)
+	else:
+		displaymessage()		
+		countdownnum = 2
+		countervar.set("")
 	
 # Button respond functions
 
@@ -385,8 +407,7 @@ class NameFrame(App):
 class ButtonFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)	
-		batteryquote = tk.Button(self, pady = 2, padx= 9, \
-			 text = "Quote Battery/Other", command = run_b)
+		batteryquote = tk.Button(self, text = "Quote Battery/Other", command = run_b)
 		batteryquote.grid(row=0, column=0)
 		batterycomplete = tk.Button(self, text = "Battery/Other Complete", \
 			command = run_nb)
@@ -411,9 +432,8 @@ class ConsoleFrame(App):
 		global to_print
 		global statusvar
 		console = tk.Label(self, textvariable=to_print, font = ("Heiti TC", 24)).pack()
+		countdown = tk.Label(self, textvariable=countervar, font = ("Heiti TC", 12)).pack()
 		status = tk.Label(self, textvariable=statusvar, font = ("Heiti TC", 15)).pack()
-		
-	# &&& instead of clear, new AUDIT mode - recheck what's on the shelf
 
 		refreshbutton = tk.Button(self, text = "Refresh Status", \
 		command = refresh).pack()
@@ -423,7 +443,7 @@ class ConsoleFrame(App):
 		#### REPLACE IMPORT WITH REFRESH
 		#importstatusbutton = tk.Button(self, text = "Import Saved Status", \
 		#	command = importstatus).pack()
-		spacer2 = tk.Label(self, text = "").pack()
+		#spacer2 = tk.Label(self, text = "").pack()
 		reportbutton = tk.Button(self, text = "Email EoD Report", command=report).pack()
 		
 class SetMessageFrame(App):
@@ -480,11 +500,12 @@ def for_import():
 	#refresh()
 	global names
 
+apptitle = "RataTAT v0.2"
+
 def main():
 	global root
 	root = tk.Tk()
 	global apptitle
-	apptitle = "RataTAT v0.1.1"
 	root.wm_title(apptitle)
 	root.geometry("600x750")
 
@@ -498,6 +519,8 @@ def main():
 	namevar = tk.StringVar()
 	global setmessagevar
 	setmessagevar = tk.StringVar()
+	global countervar
+	countervar = tk.StringVar()
 	
 	to_print.set("\nLoading...")		
 	#statusvar.set("\nChoose Start or Import below.\n")

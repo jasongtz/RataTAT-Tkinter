@@ -1,17 +1,15 @@
 # Bar version
 
 ### TO FIX:
-	# Repairs this hour doesnt work. Why? Find out.
-	# Times formatting as "0 and 1/2 hours". Fix?
 
 import Tkinter as tk
 import modularui as m
 import time
+
+
 # Button actions
 
-num = 3
-
-# &&& Bug if another button is clicked while countdown is running
+num = 2
 
 def countdown():
 	global num
@@ -20,7 +18,7 @@ def countdown():
 	if num >= 0:
 		root.after(1000, countdown)
 	else:
-		num = 3
+		num = 2
 		set_label()
 		countervar.set("")
 		
@@ -28,23 +26,38 @@ def set_label():
 	m.displaymessage()
 	
 def quote_b():
+	refresh()
 	global num
-	if num == 3:
+	if num == 2:
 		m.run_b()
 		countdown()
+	else:
+		m.to_print.set("\nWait!")
 def quote_d():
+	refresh()
 	global num
-	if num == 3:
+	if num == 2:
 		m.run_d()
 		countdown()
+	else:
+		m.to_print.set("\nWait!")
+
 def refresh():
+	getnames()
 	m.refresh()
-	set_label()
+	if num == 2:
+		set_label()
+	else:
+		m.to_print.set("\nWait!")
+
 
 def getnames():
 	m.beforeeachaction()
-	return str(m.names).replace("\n", "").replace("[", "").\
-		replace("]", "").replace("'", "")
+	namesvar.set("\n" + str(m.names).replace("\n", "").replace("[", "").\
+		replace("]", "").replace("'", "") + " doing repairs.")
+			
+			
+# TKINTER APPEARANCE
 
 class App(tk.Frame):
 	def __init__(self, master):
@@ -55,10 +68,10 @@ class App(tk.Frame):
 class NameFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)
-		titlelabel = tk.Label(self, text = "\n" + apptitle, \
+		titlelabel = tk.Label(self, text = "\n" + m.apptitle, \
 			font = ("Heiti TC", 32)).pack()
-		whosrepairinglabel = tk.Label(self, text = "\n" + getnames() + \
-			" doing repairs.", font = ("Heiti TC", 12)).pack()
+		whosrepairinglabel = tk.Label(self, textvariable = namesvar, \
+			 font = ("Heiti TC", 12)).pack()
 		spacerhead = tk.Label(self, text = "").pack()
 	
 # Buttons and interactivity
@@ -101,20 +114,16 @@ def main():
 	global root
 	root = tk.Tk()
 	
-	global apptitle
-	apptitle = "RataTAT v0.1.1"
-	root.wm_title(apptitle)
+	root.wm_title(m.apptitle)
 	root.geometry("600x500")
 
 	global countervar
 	countervar = tk.StringVar()
-	
+	global namesvar
+	namesvar = tk.StringVar()
 		
 	m.for_import()
-	set_label()
-	#m.refresh()
-
-
+	refresh()
 
 	NameFrame(root).pack()
 	ButtonFrame(root).pack()
