@@ -1,4 +1,5 @@
 #! /usr/bin/python
+
 # RataTAT!
 # Search &&& for bugs or new features
 
@@ -16,7 +17,7 @@ hour_b = None
 hour_d = None
 hour_f = None
 names = [""]
-genius = len(names)
+
 current_status = []
 
 #	EMAIL REPORT FUNCTION
@@ -136,8 +137,8 @@ def csv_autolog():
 # Creates the blank template of the current status log
 def create_log():
 	with open("log.csv", "w") as blank:
-		global names
-		topline = [str(dt.date.today()), names]
+		global genius
+		topline = [str(dt.date.today()), genius]
 		header = ["Batteries", "Displays", "Calibrating", "Calibration Failures"]
 		startvalues = [0, 0, 0, 0] #time.strftime("%H:%M:%S"), "", 
 		writer = csv.writer(blank, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
@@ -163,12 +164,12 @@ def hourly_in():
 
 # Writes the update data to the hourly_log file.
 def hourly_log():
-	global names
+	global genius
 	global hour_b
 	global hour_d
 	global hour_f
 	with open("hourly_log.txt", "w") as log:
-		log.write(str(names) + "\n%s\n%s\n%s" % (hour_b, hour_d, hour_f))
+		log.write(str(genius) + "\n%s\n%s\n%s" % (hour_b, hour_d, hour_f))
 
 #	APPLICATION FUNCTIONAL CODE
 
@@ -205,7 +206,7 @@ class Repairs(object):
 		with open("log.csv", "rb") as file:
 			status = [row for row in csv.reader(file)]  #List comprehension
 			status[2][self.index] = int(status[2][self.index]) + 1
-			status[0][1] = names
+			status[0][1] = genius
 		with open("log.csv", "wb") as file:
 			for number in range(3):
 				csv.writer(file, delimiter=",").writerow(status[number])
@@ -221,7 +222,7 @@ class Repairs(object):
 		# Reads the log.csv, sets it into var status, subtracts 1 to int at self.index
 		with open("log.csv", "rb") as file:
 			status = [row for row in csv.reader(file)]  #List comprehension
-			status[0][1] = names
+			status[0][1] = genius
 			x = int(status[2][self.index])
 			if x > 0:
 				status[2][self.index] = x - 1
@@ -266,16 +267,12 @@ def beforeeachaction():
 	hourly_in()
 	with open("log.csv", "rb") as file:
 		status = [row for row in csv.reader(file)]  #List comprehension
-	stringnames = status[0][1].replace("\n", "").replace("[", "").\
-		replace("]", "").replace("'", "")
-	global namevar
-	namevar.set(stringnames)
+	global genius
+	genius = int(status[0][1])
+	setgenius(genius)
 	global current_status
 	current_status = [int(numbers) for numbers in status[2]]
-	global names
-	names = namevar.get().split(", ")
-	global genius
-	genius = len(names)
+
 
 countdownnum = 2
 def eachactionupdate():
@@ -303,18 +300,18 @@ def countdown():
 # Button respond functions
 
 # Responds to Set Names button
-def set_names():
-	global namevar
-	global genius
-	global names
-	names = namevar.get().split(", ")
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-		status[0][1] = str(names)
-	with open("log.csv", "w") as file:
-		for number in range(3):
-			csv.writer(file, delimiter=",").writerow(status[number])	
-	refresh()
+#def set_names():
+#	global namevar
+#	global genius
+#	global names
+#	names = namevar.get().split(", ")
+#	with open("log.csv", "rb") as file:
+#		status = [row for row in csv.reader(file)]  #List comprehension
+#		status[0][1] = str(names)
+#	with open("log.csv", "w") as file:
+#		for number in range(3):
+#			csv.writer(file, delimiter=",").writerow(status[number])	
+#	refresh()
 
 def run_b():
 	beforeeachaction()
@@ -375,10 +372,26 @@ def report():
 	to_print.set("\nClosing report submitted.")
 def sendfeedback():	
 	sendemail("gwartz@icloud.com", "RataTAT Feedback", 	\
-		"%s: \n\n %s" % (names, feedbackvar.get()))
+		"%s: \n\n %s" % (genius, feedbackvar.get()))
 	feedbackvar.set("Feedback submitted. Thanks!")
 
+def setgenius(x):
+	global genius
+	genius = x	
+	with open("log.csv", "rb") as file:
+		status = [row for row in csv.reader(file)]  #List comprehension
+	status[0][1] = genius
+	with open("log.csv", "wb") as file:
+		for number in range(3):
+			csv.writer(file, delimiter=",").writerow(status[number])
+	declaregenius()
 	
+def declaregenius():
+	global genius	
+	if genius == 1:
+		geniusvar.set(str(genius) + " Genius currently.")
+	else:
+		geniusvar.set(str(genius) + " Geniuses currently.")
 
 
 ### TKINTER UI APPEARANCE CODE 		#&&& TO DO: add in comments for all these classes
@@ -394,36 +407,28 @@ class NameFrame(App):
 		tk.Frame.__init__(self, parent)
 		titlelabel = tk.Label(self, text = "\n" + \
 			apptitle, font = ("Heiti TC", 32)).pack()
-		namesofgeniuseslabel = tk.Label(self, text = "\nNames of Geniuses:", \
-			font = ("Heiti TC", 12)).pack()
-		namesinput = tk.Entry(self, textvariable = namevar)
-		namesinput.pack()
-		namesbutton = tk.Button(self, text = "Set Names", command = set_names)
-		namesbutton.pack()
-		spacerhead = tk.Label(self, text = "").pack()
-		namesinput.insert(0, "")
-
+		global geniusvar
+		geniuses = tk.Label(self, textvariable = geniusvar).pack()
+		
 # Buttons and interactivity
-class ButtonFrame(App):
+class UpperButtonFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)	
-		batteryquote = tk.Button(self, text = "Quote Battery/Other", command = run_b)
-		batteryquote.grid(row=0, column=0)
-		batterycomplete = tk.Button(self, text = "Battery/Other Complete", \
-			command = run_nb)
-		batterycomplete.grid(row=1, column=0)
-		spacer1 = tk.Label(self, text="             \n\n")
-		spacer1.grid(row=0, column=1)
-		displayquote = tk.Button(self, text = "Quote Display", command = run_d)
-		displayquote.grid(row=0, column=2)
-		displaycalib = tk.Button(self, text = "Awaiting Calibration", command = run_dc)
-		displaycalib.grid(row=0, column=4)
+		spacer1 = tk.Label(self, text="             ").pack()
+		displaycalib = tk.Button(self, text = "Awaiting Calibration", command = run_dc)\
+			.pack()
+		displayfail = tk.Button(self, text = "Display Failed", command = run_df).pack()		
 		spacer2 = tk.Label(self, text="  ")
-		spacer2.grid(row=0, column=3)
-		displayfail = tk.Button(self, text = "Display Failed", command = run_df)
-		displayfail.grid(row=1, column=2)
-		displaycomplete = tk.Button(self, text = "Display Complete", command = run_nd)
-		displaycomplete.grid(row=1, column=4)
+		spacer2.pack()
+		
+class MiddleButtonFrame(App):
+	def __init__(self, parent):
+		tk.Frame.__init__(self, parent)	
+		displaycomplete = tk.Button(self, text = "Display RFP", command = run_nd)
+		displaycomplete.grid(row=3, column=1)	
+		batterycomplete = tk.Button(self, text = "Battery/Other RFP", \
+			command = run_nb)
+		batterycomplete.grid(row=3, column=3)
 
 # Console output frame
 class ConsoleFrame(App):
@@ -434,29 +439,43 @@ class ConsoleFrame(App):
 		console = tk.Label(self, textvariable=to_print, font = ("Heiti TC", 24)).pack()
 		countdown = tk.Label(self, textvariable=countervar, font = ("Heiti TC", 12)).pack()
 		status = tk.Label(self, textvariable=statusvar, font = ("Heiti TC", 15)).pack()
-
 		refreshbutton = tk.Button(self, text = "Refresh Status", \
-		command = refresh).pack()
+			command = refresh).pack()
 		spacer1 = tk.Label(self, text = "").pack()
-		newsessionbutton = tk.Button(self, text = "Start New Session", \
-		command=newsession).pack()
-		#### REPLACE IMPORT WITH REFRESH
-		#importstatusbutton = tk.Button(self, text = "Import Saved Status", \
-		#	command = importstatus).pack()
-		#spacer2 = tk.Label(self, text = "").pack()
-		reportbutton = tk.Button(self, text = "Email EoD Report", command=report).pack()
 		
+class LowerButtonFrame(App):
+	def __init__(self, parent):
+		tk.Frame.__init__(self, parent)	
+	
+		batteryquote = tk.Button(self, text = "Add Battery/Other", command = run_b)
+		batteryquote.grid(row=0, column=0)
+		spacer1 = tk.Label(self, text="             \n\n")
+		#spacer1.grid(row=0, column=1)
+		displayquote = tk.Button(self, text = "Add Display", command = run_d)
+		displayquote.grid(row=0, column=1)
+
+	
+#### REMOVE THESE TWO CLASSES	
 class SetMessageFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)
 		spacer = tk.Label(self, text = "").pack()
 		global setmessagevar
-		messageinput = tk.Entry(self, width=50, textvariable = setmessagevar).pack()
+		messageinput = tk.Entry(self, width=30, textvariable = setmessagevar).pack()
 		setmessagebutton = tk.Button(self, text = "Set Emergency Message", \
 			 command = setmessage).pack()
-		defaultmessagebutton = tk.Button(self, text = "Set Default Message", \
+		defaultmessagebutton = tk.Button(self, text = "Return to Default Message", \
 			command = defaultmessage).pack()
+		spacer1 = tk.Label(self, text = "").pack()
 
+class DayFrame(App):
+	def __init__(self, parent):
+		tk.Frame.__init__(self, parent)	
+		newsessionbutton = tk.Button(self, text = "Start Day", \
+		command=newsession).grid(row=0, column=0)
+		reportbutton = tk.Button(self, text = "End Day", command=report)\
+			.grid(row=0, column=1)
+########################
 
 class FeedbackFrame(App):
 	def __init__(self, parent):
@@ -465,7 +484,7 @@ class FeedbackFrame(App):
 		#spacer = tk.Label(self, text = "").pack()
 		copyrightlabel = tk.Label(self, text = "\n\nDesigned by Jason in London\n", \
 			font = ("Heiti TC", 10)).pack()
-		feedbackinput = tk.Entry(self, width=30, textvariable = feedbackvar).pack()
+		feedbackinput = tk.Entry(self, width=50, textvariable = feedbackvar).pack()
 		feedbackbutton = tk.Button(self, text = "Submit Feedback", \
 			 command = sendfeedback).pack()
 
@@ -474,9 +493,9 @@ class FeedbackFrame(App):
 def newsession():
 	#Sets up all variables to blank, creates new log files.
 	create_csv()
-	set_names()
+	#set_names()
 	with open("hourly_log.txt", "w") as log:
-		log.write("%s\nCleared" % names)
+		log.write("%s\nCleared" % genius)
 	global hour_d
 	global hour_b
 	global hour_f
@@ -497,6 +516,11 @@ def for_import():
 	feedbackvar = tk.StringVar()
 	global namevar
 	namevar = tk.StringVar()
+	global geniusvar
+	geniusvar = tk.StringVar()
+	global setmessagevar
+	setmessagevar = tk.StringVar()
+	
 	#refresh()
 	global names
 
@@ -507,7 +531,7 @@ def main():
 	root = tk.Tk()
 	global apptitle
 	root.wm_title(apptitle)
-	root.geometry("600x750")
+	root.geometry("600x600")
 
 	global statusvar
 	statusvar = tk.StringVar()
@@ -521,14 +545,16 @@ def main():
 	setmessagevar = tk.StringVar()
 	global countervar
 	countervar = tk.StringVar()
-	
+	global geniusvar
+	geniusvar = tk.StringVar()
+
 	to_print.set("\nLoading...")		
-	#statusvar.set("\nChoose Start or Import below.\n")
 		
 	NameFrame(root).pack()
-	ButtonFrame(root).pack()
+	UpperButtonFrame(root).pack()
+	MiddleButtonFrame(root).pack()
 	ConsoleFrame(root).pack()
-	SetMessageFrame(root).pack()
+	LowerButtonFrame(root).pack()
 	FeedbackFrame(root).pack()
 
 	refresh()
