@@ -181,20 +181,48 @@ def round_tat(num):
 	remain = num%1
 	if num.is_integer() == False:
 		if num > 1:
-			return str(int(num-remain)) + " and " + str(Fraction(remain))
+			if num-remain == 1:
+				return str(int(num-remain)) + " hour and " + str(int(remain*60)) + " minutes."
+			else:
+				return str(int(num-remain)) + " hours and " + str(int(remain*60)) + " minutes."
 		else:
-			return str(Fraction(remain))
+			return str(int(remain*60)) + " minutes."
 	else:
-		return int(num)
+		if int(num) == 1:
+			return str(int(num)) + " hour."
+		else:
+			return str(int(num)) + " hours."
+
+def check_nextday(x):
+	now = dt.datetime.now()
+	
+	extra_hour = ((now.minute + int(x%1*60)) / 60)
+	endtime = dt.time(now.hour + int(x) + extra_hour, (now.minute + int(x%1*60))%60)
+	if now.weekday() == 6:
+		if endtime > dt.time(17, 50):
+			return True
+		else:
+			return False
+	else:
+		if endtime > dt.time(19, 50):
+			return True
+		else:
+			return False
 
 def quote_battery(bq, dq):
 	global genius
 	num = float(calc((((bq + dq)/genius) * 15 + 30))) / 60
-	return "\n Quote %s hours." % round_tat(num)
+	if check_nextday(num):
+		return "\nNEXT DAY"
+	else:
+		return "\n Quote %s" % round_tat(num)
 def quote_display(bq, dq, dc, df):
 	global genius
 	num = float(calc((((bq + dq + dc + df) / genius) * 15 + 45))) / 60
-	return "\n Quote %s hours." % round_tat(num)
+	if check_nextday(num):
+		return "\nNEXT DAY"
+	else:
+		return "\n Quote %s" % round_tat(num)
 
 class Repairs(object):
 	def __init__(self, index, exitmessage):
@@ -447,12 +475,12 @@ class LowerButtonFrame(App):
 	def __init__(self, parent):
 		tk.Frame.__init__(self, parent)	
 	
-		batteryquote = tk.Button(self, text = "Add Battery/Other", command = run_b)
-		batteryquote.grid(row=0, column=0)
 		spacer1 = tk.Label(self, text="             \n\n")
 		#spacer1.grid(row=0, column=1)
 		displayquote = tk.Button(self, text = "Add Display", command = run_d)
-		displayquote.grid(row=0, column=1)
+		displayquote.grid(row=0, column=0)
+		batteryquote = tk.Button(self, text = "Add Battery/Other", command = run_b)
+		batteryquote.grid(row=0, column=1)
 
 	
 #### REMOVE THESE TWO CLASSES	
@@ -524,7 +552,7 @@ def for_import():
 	#refresh()
 	global names
 
-apptitle = "RataTAT v0.2"
+apptitle = "RataTAT v0.2.1"
 
 def main():
 	global root
