@@ -26,12 +26,14 @@ def set_label():
 	m.displaymessage()
 
 def quote_b():
+	refresh()
 	global b
 	m.to_print.set(m.quote_battery(m.current_status[0], m.current_status[1]))
 	b.pack()
 	b.buildconfirm()
 
 def quote_d():
+	refresh()
 	global d
 	m.to_print.set(m.quote_display(m.current_status[0], m.current_status[1], \
 				m.current_status[2], m.current_status[3]))
