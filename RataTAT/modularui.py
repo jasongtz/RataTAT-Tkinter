@@ -3,6 +3,9 @@
 # RataTAT!
 # Search &&& for bugs or new features
 
+### &&& GET RID OF GLOBAL FUNCTIONS
+	# Next to do will be hour_b, etc and Tkinter variables
+
 #	Modules imported and starting global variables
 import Tkinter as tk
 import time
@@ -18,7 +21,6 @@ hour_d = None
 hour_f = None
 names = [""]
 
-current_status = []
 
 #	EMAIL REPORT FUNCTION
 def sendemail(recip, subject, message):
@@ -85,7 +87,7 @@ def sendemail(recip, subject, message):
 def create_csv():
 	with open("dailydata.csv", "w") as blank:
 		todays_date = [str(dt.date.today())]
-		header = ["Time", "Names", "Batteries", "Displays", "Calibration Failures"]
+		header = ["Time", "Geniuses", "Batteries", "Displays", "Calibration Failures"]
 		writer = csv.writer(blank, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
 		writer.writerow(todays_date)
 		writer.writerow(header)
@@ -137,8 +139,7 @@ def csv_autolog():
 # Creates the blank template of the current status log
 def create_log():
 	with open("log.csv", "w") as blank:
-		global genius
-		topline = [str(dt.date.today()), genius]
+		topline = [str(dt.date.today()), readgenius()]
 		header = ["Batteries", "Displays", "Calibrating", "Calibration Failures"]
 		startvalues = [0, 0, 0, 0] #time.strftime("%H:%M:%S"), "", 
 		writer = csv.writer(blank, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
@@ -169,12 +170,54 @@ def hourly_log():
 	global hour_d
 	global hour_f
 	with open("hourly_log.txt", "w") as log:
-		log.write(str(genius) + "\n%s\n%s\n%s" % (hour_b, hour_d, hour_f))
+		log.write("%s\n%s\n%s\n%s" % (readgenius(), hour_b, hour_d, hour_f))
 
 
 #	APPLICATION FUNCTIONAL CODE
+	
+	
+class Repairs(object):
+	def __init__(self, index, exitmessage):
+			# Variable self.index indicates the position in the .csv line where the
+			# particular repair type's count is stored.
+			self.index = index
+			self.exitmessage = exitmessage
+			
+	def add(self):
+		# Retrieves the current status and number of Geniuses doing repairs
+		current_status = getcurrentstatus()
+		genius = readgenius()	
+		# Adds 1 to the queue for repair type given by self.index
+		current_status[self.index] = current_status[self.index] + 1
+		# Writes the new values to the log file
+		writestatus(current_status)
+		# Runs the quoting functions, passing in integers for arguments 
+		# representing the current status as retrieved above
+		if self.index == 0:
+			return quote_battery(current_status[0], current_status[1], genius)
+		elif self.index == 1:
+			return quote_display(current_status[0], current_status[1], \
+				current_status[2], current_status[3], genius)
 
-# &&& removed calc(x) - wasn't necessary with 0.25 instead of 15, 30.etc
+	def remove(self):
+		# Retrieves the current status and number of Geniuses doing repairs
+		current_status = getcurrentstatus()
+		genius = readgenius()
+		# Checks if there is anything in the count to remove, then
+		# subtracts 1 from the queue at self.index
+		if current_status[self.index] > 0:
+			current_status[self.index] = current_status[self.index] - 1
+		else:
+			return "\nError!"
+		# Writes the new values to the log file and displays self.exitmessage
+		writestatus(current_status)
+		return self.exitmessage
+			
+# Instantiates all repair/movement types
+battery = Repairs(0, "\nBattery complete.")
+display = Repairs(1, "\nDisplay awaiting calibration.")
+calib = Repairs(2, "\nDisplay complete.")
+fail = Repairs(3, None) # Failure counts get removed invisibly, thus no self.exitmessage
 
 def round_tat(num):
 	remain = num%1
@@ -194,89 +237,57 @@ def round_tat(num):
 		else:
 			return str(int(num)) + " hours."
 
-def check_nextday(x):
-# Returns True if the estimated repair completion time is after the store's closing hours
+def check_sameday(x):
+# Returns False if the estimated repair completion time is after the store's closing hours
 	now = dt.datetime.now()	
 	carry_the_hour = ((now.minute + int(x%1*60)) / 60)
 	endtime = dt.time(now.hour + int(x) + carry_the_hour, (now.minute + int(x%1*60))%60)
 		# Adds the repair time to the current time to estimate a completion time	
 	if now.weekday() == 6:
 		if endtime > dt.time(17, 50):
-			return True
-		else:
 			return False
+		else:
+			return True
 	else:
 		if endtime > dt.time(19, 50):
-			return True
-		else:
 			return False
+		else:
+			return True
 
-# The two following functions use calc(x) and int(genius) to generate a turnaround time
+# The two following functions use int(genius) to generate a turnaround time
 def quote_battery(bq, dq, genius):
 	num = float((bq + dq)/genius * 0.25 + 0.5)
 	# Checks if the repair can be completed same-day.
-	if check_nextday(num):
-		return "\nNEXT DAY"
-	else:
+	if check_sameday(num):
 		return "\n Quote %s" % round_tat(num)
-
+	else:
+		return "\nNEXT DAY"
+	
 def quote_display(bq, dq, dc, df, genius):
 	num = float((bq + dq + dc + df) / genius * 0.25 + 0.75)
-	if check_nextday(num):
-		return "\nNEXT DAY"
-	else:
+	if check_sameday(num):
 		return "\n Quote %s" % round_tat(num)
+	else:
+		return "\nNEXT DAY"
 
-class Repairs(object):
-	def __init__(self, index, exitmessage):
-			# Variable self.index indicates the position in the .csv line where the
-			# particular repair type's count is stored.
-			self.index = index
-			self.exitmessage = exitmessage
 
-	def add(self):
-		# Reads the log.csv, sets it into var status, adds 1 to int at self.index
-		with open("log.csv", "rb") as file:
-			status = [row for row in csv.reader(file)]  #List comprehension
-			genius = int(status[0][1])
-			status[2][self.index] = int(status[2][self.index]) + 1
-		with open("log.csv", "wb") as file:
-			for number in range(3):
-				csv.writer(file, delimiter=",").writerow(status[number])
-		global current_status
-		current_status = [int(numbers) for numbers in status[2]]
-		if self.index == 0:
-			return quote_battery(current_status[0], current_status[1], genius)
-		elif self.index == 1:
-			return quote_display(current_status[0], current_status[1], \
-				current_status[2], current_status[3], genius)
+def readlogfile():
+	with open("log.csv", "rb") as file:
+		return [row for row in csv.reader(file)]  #List comprehension
 
-	def remove(self):
-		# Reads the log.csv, sets it into var status, subtracts 1 to int at self.index
-		with open("log.csv", "rb") as file:
-			status = [row for row in csv.reader(file)]  #List comprehension
-			status[0][1] = genius
-			x = int(status[2][self.index])
-			if x > 0:
-			# Checks if there is anything in the count to remove
-				status[2][self.index] = x - 1
-			else:
-				return "\nError!"
-		with open("log.csv", "wb") as file:
-			for number in range(3):
-				csv.writer(file, delimiter=",").writerow(status[number])	
-		global current_status
-		current_status = [int(numbers) for numbers in status[2]]
-		if self.index == [3]:
-			pass
-		else:
-			return self.exitmessage
+def readgenius():
+	return int(readlogfile()[0][1])
 
-# Instantiates all repair/movement types
-battery = Repairs(0, "\nBattery complete.")
-display = Repairs(1, "\nDisplay awaiting calibration.")
-calib = Repairs(2, "\nDisplay complete.")
-fail = Repairs(3, None) # Failure counts get removed invisibly, thus no self.exitmessage
+def getcurrentstatus():
+	return [int(numbers) for numbers in readlogfile()[2]]
+
+def writestatus(values):
+	status = readlogfile()
+	status[2] = values
+	with open("log.csv", "wb") as file:
+		for num in range(3):
+			csv.writer(file, delimiter=",").writerow(status[num])
+
 
 
 #	TKINTER UI FUNCTIONAL CODE which calls from functional code above
@@ -287,6 +298,7 @@ def refresh():
 
 # Used to refresh the status message
 def get_status():
+	current_status = getcurrentstatus()
 	statusvar.set("\n%d batteries/other, %d displays awaiting repair." \
 		"\nThere are %d phones in or awaiting calibration/testing. \n" \
 		"%s repairs completed so far this hour.\n" % \
@@ -297,16 +309,10 @@ def displaymessage():
 		message = file.readline()
 		to_print.set("\n" + message)
 
+	
 def beforeeachaction():
 	hourly_in()
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-	global genius
-	genius = int(status[0][1])
-	setgenius(genius)
-	global current_status
-	current_status = [int(numbers) for numbers in status[2]]
-
+	setgenius(readgenius())
 
 countdownnum = 2
 
@@ -332,7 +338,7 @@ def countdown():
 		countdownnum = 2
 		countervar.set("")
 	
-# Button respond functions
+# BUTTON RESPONSE FUNCTIONS
 
 def run_b():
 	beforeeachaction()
@@ -341,7 +347,7 @@ def run_b():
 def run_nb():
 	beforeeachaction()
 	global hour_b
-	if current_status[0]>=1:
+	if getcurrentstatus()[0]>=1:
 		hour_b += 1
 	to_print.set(battery.remove())
 	eachactionupdate()
@@ -360,7 +366,7 @@ def run_dc():
 def run_df():
 	beforeeachaction()
 	global hour_f
-	if current_status[2]>=1:
+	if getcurrentstatus()[2]>=1:
 		hour_f += 1
 	fail.add()
 	to_print.set("\nDisplay failed, attempt again.")
@@ -368,13 +374,11 @@ def run_df():
 def run_nd():
 	beforeeachaction()
 	global hour_d
-	if current_status[2]>=1:
+	if getcurrentstatus()[2]>=1:
 		hour_d += 1		
 	to_print.set(calib.remove())
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
-		if int(status[2][3]) > 0:
-			fail.remove()
+	if getcurrentstatus()[3] > 0:
+		fail.remove()
 	eachactionupdate()
 
 def setmessage():
@@ -383,7 +387,7 @@ def setmessage():
 	refresh()
 def defaultmessage():
 	with open("message.txt", "w") as file:
-		file.write("All clear. Fire when ready.")
+		file.write("All clear. Choose a button above.")
 	refresh()
 	
 def report():
@@ -397,8 +401,7 @@ def sendfeedback():
 	feedbackvar.set("Feedback submitted. Thanks!")
 
 def setgenius(genius):
-	with open("log.csv", "rb") as file:
-		status = [row for row in csv.reader(file)]  #List comprehension
+	status = readlogfile()
 	status[0][1] = genius
 	with open("log.csv", "wb") as file:
 		for number in range(3):
@@ -539,16 +542,12 @@ def for_import():
 	global setmessagevar
 	setmessagevar = tk.StringVar()
 	
-	#refresh()
-	global names
-
 apptitle = "RataTAT v0.2.1"
 
-def main():
+def main(title):
 	global root
 	root = tk.Tk()
-	global apptitle
-	root.wm_title(apptitle)
+	root.wm_title(title)
 	root.geometry("600x600")
 
 	global statusvar
@@ -575,9 +574,8 @@ def main():
 	LowerButtonFrame(root).pack()
 	FeedbackFrame(root).pack()
 
-	refresh()
-		
+	refresh()		
 	root.mainloop()
 
 if __name__ == "__main__":
-	main()	
+	main(apptitle)	
