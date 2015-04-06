@@ -1,0 +1,9 @@
+gr245@icloud.com
+gr245@icloud.com
+gr245@icloud.com
+Genius245
+
+1 = feedbackrecip
+2 = reportrecip
+3 = sending
+4 = password

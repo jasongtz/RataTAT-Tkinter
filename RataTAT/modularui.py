@@ -19,7 +19,6 @@ from email.mime.multipart import MIMEMultipart
 hour_b = None
 hour_d = None
 hour_f = None
-names = [""]
 
 
 #	EMAIL REPORT FUNCTION
@@ -49,7 +48,7 @@ def sendemail(recip, subject, message):
 		to_attach = MIMEText(fp.read())
 		fp.close()
 		to_attach.add_header("Content-Disposition", "attachment", \
-			 filename = "modular %s.csv" % str(dt.datetime.today()))
+			 filename = "modular %s.csv" % str(dt.date.today()))
 		msg.attach(to_attach)
 	
 	# Attaches the daily, hourly, and current log files to a feedback submission
@@ -122,10 +121,19 @@ def csvlog():
 
 # csv_autolog() imports csvlog() from above and runs it once per hour.
 # This function is imported and ran by an exterior Python file, csvonly.py.
+
+#&&&&&&& Carry over some data to the next day?!
+
 def csv_autolog():
 	while True:
 		now = dt.datetime.now()
-		if 8 < int(now.strftime("%H")) < 22:		
+		############### - new auto-log stuff below
+		if int(now.strftime("%H")) == 4:
+			newsession()
+		elif int(now.strftime("%H")) == 10:
+			report()
+		##############
+		if 5 < int(now.strftime("%H")) < 22:		
 			if now.strftime("%M") == "00":
 				csvlog()
 				time.sleep(60)
@@ -177,85 +185,56 @@ def hourly_log():
 	
 	
 class Repairs(object):
+	"""Different types of repairs are given an index indicating at which column their
+	count is found in the log.csv file, and an exit message which is displayed when
+	one is removed from the count in log.csv.
+	"""
 	def __init__(self, index, exitmessage):
-			# Variable self.index indicates the position in the .csv line where the
-			# particular repair type's count is stored.
 			self.index = index
 			self.exitmessage = exitmessage
 			
 	def add(self):
-		# Retrieves the current status and number of Geniuses doing repairs
+		"""Adds a new repair to the log, returns the quoted estimated time.
+		
+		Retrieves the current status and number of Geniuses doing repairs, 
+		then adds 1 to the queue for repair type given by self.index.
+		Writes the new values to the log file. Then runs the quoting functions, 
+		passing in integers for arguments representing the current status.
+		"""
 		current_status = getcurrentstatus()
 		genius = readgenius()	
-		# Adds 1 to the queue for repair type given by self.index
 		current_status[self.index] = current_status[self.index] + 1
-		# Writes the new values to the log file
 		writestatus(current_status)
-		# Runs the quoting functions, passing in integers for arguments 
-		# representing the current status as retrieved above
 		if self.index == 0:
 			return quote_battery(current_status[0], current_status[1], genius)
 		elif self.index == 1:
 			return quote_display(current_status[0], current_status[1], \
-				current_status[2], current_status[3], genius)
+				   current_status[2], current_status[3], genius)
 
 	def remove(self):
-		# Retrieves the current status and number of Geniuses doing repairs
+		"""Removes a completed repair from the log, or removes it from one repair type
+		in order for it to be added to another.
+		
+		Retrieves the current status and number of Geniuses doing repairs, 
+		then subtracts 1 from the queue for repair type given by self.index.
+		Writes the new values to the log file, as in the add(self) function above.
+		"""
 		current_status = getcurrentstatus()
-		genius = readgenius()
-		# Checks if there is anything in the count to remove, then
-		# subtracts 1 from the queue at self.index
 		if current_status[self.index] > 0:
 			current_status[self.index] = current_status[self.index] - 1
 		else:
 			return "\nError!"
-		# Writes the new values to the log file and displays self.exitmessage
 		writestatus(current_status)
 		return self.exitmessage
 			
-# Instantiates all repair/movement types
+# Instantiation of all repair/movement types
 battery = Repairs(0, "\nBattery complete.")
 display = Repairs(1, "\nDisplay awaiting calibration.")
 calib = Repairs(2, "\nDisplay complete.")
 fail = Repairs(3, None) # Failure counts get removed invisibly, thus no self.exitmessage
 
-def round_tat(num):
-	remain = num%1
-	if num.is_integer() == False:
-		if num > 1:
-			if num-remain == 1:
-				return str(int(num-remain)) + " hour and " + \
-					str(int(remain*60)) + " minutes."
-			else:
-				return str(int(num-remain)) + " hours and " + \
-					str(int(remain*60)) + " minutes."
-		else:
-			return str(int(remain*60)) + " minutes."
-	else:
-		if int(num) == 1:
-			return str(int(num)) + " hour."
-		else:
-			return str(int(num)) + " hours."
-
-def check_sameday(x):
-# Returns False if the estimated repair completion time is after the store's closing hours
-	now = dt.datetime.now()	
-	carry_the_hour = ((now.minute + int(x%1*60)) / 60)
-	endtime = dt.time(now.hour + int(x) + carry_the_hour, (now.minute + int(x%1*60))%60)
-		# Adds the repair time to the current time to estimate a completion time	
-	if now.weekday() == 6:
-		if endtime > dt.time(17, 50):
-			return False
-		else:
-			return True
-	else:
-		if endtime > dt.time(19, 50):
-			return False
-		else:
-			return True
-
-# The two following functions use int(genius) to generate a turnaround time
 def quote_battery(bq, dq, genius):
+	"""Takes the current repair queues in arguments, returns a turnaround time."""
 	num = float((bq + dq)/genius * 0.25 + 0.5)
 	# Checks if the repair can be completed same-day.
 	if check_sameday(num):
@@ -264,30 +243,72 @@ def quote_battery(bq, dq, genius):
 		return "\nNEXT DAY"
 	
 def quote_display(bq, dq, dc, df, genius):
+	"""As with quote_battery, but includes display-related status integers."""
 	num = float((bq + dq + dc + df) / genius * 0.25 + 0.75)
 	if check_sameday(num):
 		return "\n Quote %s" % round_tat(num)
 	else:
 		return "\nNEXT DAY"
 
+def check_sameday(num):
+	"""Returns False if the estimated repair completion 
+	time is after the store's closing hours.
+	"""
+	num_minutes = int(num%1*60)
+	now = dt.datetime.now()
+	carry_the_hour = ((now.minute + num_minutes) / 60)
+	# Adds the repair time to the current time to estimate a completion time
+	endtime = dt.time((now.hour + int(num) + carry_the_hour), \
+					  (now.minute + num_minutes)%60)	
+	if now.weekday() == 6:
+		if endtime > dt.time(17, 50):
+			return False
+		else:
+			return True
+	else:
+		if endtime > dt.time(23, 50):
+			return False
+		else:
+			return True
 
 def readlogfile():
+	"""Opens the log file, returns a list where each line of the csv is a list."""
 	with open("log.csv", "rb") as file:
-		return [row for row in csv.reader(file)]  #List comprehension
+		return [row for row in csv.reader(file)]  # List comprehension
 
 def readgenius():
+	"""Reads the cell of log.csv where the current number of Geniuses is stored."""
 	return int(readlogfile()[0][1])
 
 def getcurrentstatus():
+	"""Converts the 2nd line of the status file into integers, returns as a list."""
 	return [int(numbers) for numbers in readlogfile()[2]]
 
 def writestatus(values):
+	"""Takes the current status file, changes the values line, writes it back."""
 	status = readlogfile()
 	status[2] = values
 	with open("log.csv", "wb") as file:
 		for num in range(3):
 			csv.writer(file, delimiter=",").writerow(status[num])
 
+def round_tat(num):
+	"""Changes the turnaround time from a float into natural language hours + minutes."""
+	remain = num%1
+	if num.is_integer():
+		if int(num) == 1:
+			return str(int(num)) + " hour."
+		else:
+			return str(int(num)) + " hours."
+	else:
+		if num < 1:
+			return str(int(remain*60)) + " minutes."
+		elif num-remain == 1:
+			return str(int(num-remain)) + " hour and " + \
+					str(int(remain*60)) + " minutes."
+		else:
+			return str(int(num-remain)) + " hours and " + \
+					str(int(remain*60)) + " minutes."
 
 
 #	TKINTER UI FUNCTIONAL CODE which calls from functional code above
@@ -414,6 +435,23 @@ def declaregenius(genius):
 	else:
 		geniusvar.set(str(genius) + " Geniuses currently.")
 
+def newsession():
+	# &&& TO FIX: LIST INDEX ISSUE
+	
+	#Sets up all variables to blank, creates new log files.
+	create_log()
+	create_csv()
+	with open("hourly_log.txt", "w") as log:
+		log.write("%s\nCleared" % 1)
+	global hour_d
+	global hour_b
+	global hour_f
+	hour_b = 0
+	hour_d = 0
+	hour_f = 0
+	refresh()
+	defaultmessage()
+
 
 ### TKINTER UI APPEARANCE CODE 		#&&& TO DO: add in comments for all these classes
 
@@ -511,22 +549,6 @@ class FeedbackFrame(App):
 
 
 
-def newsession():
-	#Sets up all variables to blank, creates new log files.
-	create_csv()
-	#set_names()
-	with open("hourly_log.txt", "w") as log:
-		log.write("%s\nCleared" % genius)
-	global hour_d
-	global hour_b
-	global hour_f
-	hour_b = 0
-	hour_d = 0
-	hour_f = 0
-	create_log()
-	hourly_log()
-	refresh()
-	defaultmessage()
 
 def for_import():
 	global statusvar
