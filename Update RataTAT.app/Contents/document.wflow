@@ -55,6 +55,7 @@
 						<string>/Volumes/RataTAT Installer/Local (ISR1) Apps</string>
 						<string>/Volumes/RataTAT Installer/Network Apps</string>
 						<string>/Volumes/RataTAT Installer/RataTAT</string>
+						<string>/Volumes/RataTAT Installer/changelog.md</string>
 					</array>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -237,7 +238,7 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>4620774E-B1D4-4B68-9B3A-4573D483ACF0</key>
+		<key>2B1B8088-2F1A-40C1-9250-9D456F71A895</key>
 		<dict>
 			<key>from</key>
 			<string>D2EE6AA1-F317-42F1-AA77-3467CAE405EA - D2EE6AA1-F317-42F1-AA77-3467CAE405EA</string>

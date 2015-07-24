@@ -88,7 +88,7 @@ def main():
 	NameFrame(root).pack()
 	GeniusFrame(root).pack()
 	SetMessageFrame(root).pack()
-	DayFrame(root).pack()
+#	DayFrame(root).pack()
 	FeedbackFrame(root).pack()
 
 	root.mainloop()

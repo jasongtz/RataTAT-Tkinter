@@ -32,6 +32,8 @@ def quote_b():
 		status = [row for row in csv.reader(file)]  #List comprehension
 	m.to_print.set(m.quote_battery(int(status[2][0]), \
 		 int(status[2][1]), int(status[0][1])))
+	if d.confirmbutton.winfo_viewable() == True:
+	    d.clearconfirm()
 	b.pack()
 	b.buildconfirm()
 
@@ -42,6 +44,8 @@ def quote_d():
 		status = [row for row in csv.reader(file)]  #List comprehension
 	m.to_print.set(m.quote_display(int(status[2][0]), int(status[2][1]), \
 		int(status[2][2]), int(status[2][3]), int(status[0][1])))
+	if b.confirmbutton.winfo_viewable() == True:
+	    b.clearconfirm()
 	d.pack()
 	d.buildconfirm()
 
