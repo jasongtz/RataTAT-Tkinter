@@ -213,7 +213,7 @@ def quote_battery(bq, dq, genius):
 	num = float((bq + dq)/genius * 0.25 + 0.5)
 	# Checks if the repair can be completed same-day.
 	if check_sameday(num):
-		return "\n Quote %s" % round_tat(num)
+		return "\nQuote %s" % round_tat(num)
 	else:
 		return "\nNEXT DAY"
 	
@@ -221,7 +221,7 @@ def quote_display(bq, dq, dc, df, genius):
 	"""As with quote_battery, but includes display-related status integers."""
 	num = float((bq + dq + dc + df)/ genius * 0.25 + 0.80)
 	if check_sameday(num):
-		return "\n Quote %s" % round_tat(num)
+		return "\nQuote %s" % round_tat(num)
 	else:
 		return "\nNEXT DAY"
 
